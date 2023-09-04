@@ -241,8 +241,8 @@ nav{
     animation: imgFloat 7s ease-in-out infinite;
 }
 .image img{
-    width: 380px;
-    height: 380px;
+    width: 440px;
+    height: 440px;
     object-fit: contain;
 }
 @keyframes imgFloat {
