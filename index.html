@@ -65,7 +65,7 @@
 
 </head>
 
-<body class="bg-gray-100 dark:bg-slate-800">
+<body class="bg-gray-100 dark:bg-slate-800 scrollbar-thin">
 
   <!-- Navbar  -->
   <nav
@@ -271,22 +271,22 @@
   <main>
 
     <!-- Home Section  -->
-    <section id="home"
-      class="flex flex-col md:mb-0 sm:flex-row md:flex-col lg:flex-row items-center justify-center px-10 md:px-64 w-full h-auto md:h-dvh mb-24 md:mb-0">
+    <section id="home" class="grid grid-cols-1 h-auto lg:h-dvh items-center mb-24 lg:mb-0">
 
       <!-- Image  -->
-      <img src="./image/profile.jpg"
-        class="object-fill mt-40 md:mt-0 rounded-full shadow-lg border-4 border-zinc-100 dark:border-slate-200 w-72 h-72 mb-6"
-        alt="">
+      <div class="flex items-center justify-center mt-28">
+        <img src="./image/profile.jpg"
+          class="object-fill  rounded-full shadow-lg border-4 border-zinc-100 dark:border-slate-200 w-72 h-72" alt="">
+      </div>
 
-      <div class="md:px-10 text-center md:text-start">
+      <div class="col-auto text-center px-10 lg:px-64">
 
         <!-- Name -->
         <h3 class="uppercase font-medium font-rubik text-3xl mb-5 md:mb-5 text-gray-700 dark:text-zinc-300">Hein Htet
           San</h3>
 
         <!-- What I do  -->
-        <div class="h-14">
+        <div class="h-10">
           <div class="word mb-6 font-rubik font-medium text-gray-800 text-xl dark:text-zinc-300"></div>
         </div>
 
@@ -298,10 +298,10 @@
         </div>
 
         <!-- Buttons  -->
-        <div class="flex flex-col sm:flex-row">
+        <div class="flex flex-col sm:flex-row items-center justify-center">
           <!-- Download cv  -->
           <button
-            class="text-sm flex items-center mx-auto md:mx-0 md:items-start bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
+            class="text-sm flex items-center bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
             <i class="bx bx-file me-1 text-lg"></i> <span class="md:mt-1">Download CV</span>
           </button>
 
@@ -309,24 +309,25 @@
 
           <!-- Hire me  -->
           <button
-            class="text-sm bg-gray-600 md:items-start mx-auto md:mx-0 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-gray-900 dark:hover:bg-gray-700 dark:border-2 border-slate-500 hover:bg-gray-500 shadow-lg flex items-center">
+            class="text-sm bg-gray-600 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-gray-900 dark:hover:bg-gray-700 dark:border-2 border-slate-500 hover:bg-gray-500 shadow-lg flex items-center">
             <i class="bx bx-rocket me-1 text-lg"></i> <span class="md:mt-1">Hire me</span>
           </button>
         </div>
+      </div>
 
     </section>
     <!-- End of Home Section  -->
 
     <!-- About Section  -->
     <section id="about"
-      class="flex flex-col justify-center aligns-center px-10 md:px-64 w-full h-auto space-x-5 md:h-dvh mb-20 md:mb-0">
+      class="flex flex-col justify-center aligns-center px-10 lg:px-64 w-full h-auto space-x-5 lg:h-dvh mb-24 lg:mb-0">
 
       <h1 class="uppercase text-3xl mb-10 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">Who Am I?
       </h1>
 
-      <div class="flex flex-col md:flex-row items-center justify-center">
+      <div class="flex flex-col lg:flex-row items-center justify-center">
         <!-- Content  -->
-        <div class="content px-3 md:px-10 order-1 md:order-0">
+        <div class="content px-3 lg:px-10 order-1 md:order-0">
           <p class="indent-10 font-rubik text-gray-800 dark:text-slate-400 text-justify mb-2">
             Hello, I'm a passionate Software Engineering student currently in my 4th semester at the University of
             Computer
@@ -350,19 +351,19 @@
         </div>
         <!-- Image  -->
         <img src="./image/post-profile.jpg" alt="Hein Htet San" title="Hein Htet San"
-          class="order-0 md:order-1 rounded-lg w-64 shadow-lg mb-8 border-2 border-slate-500 dark:border-slate-200">
+          class="order-0 lg:order-1 rounded-lg w-64 shadow-lg mb-8 border-2 border-slate-500 dark:border-slate-200">
       </div>
     </section>
     <!-- End of About Section  -->
 
     <!-- Service Section  -->
     <section id="services"
-      class="flex flex-col justify-center aligns-center px-10 md:px-44 w-full h-auto space-x-5 md:h-dvh mb-20 md:mb-0">
+      class="flex flex-col justify-center aligns-center px-10 lg:px-44 w-full h-auto space-x-5 lg:h-dvh mb-20 lg:mb-0">
       <!-- TItle  -->
       <h1 class="block uppercase text-3xl mb-10 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
         Skills & Service Offers</h1>
 
-      <div class="flex space-x-0 md:space-x-10 flex-col md:flex-row aligns-center justify-center">
+      <div class="flex space-x-0 md:space-x-10 flex-col lg:flex-row aligns-center justify-center">
         <!-- Skills  -->
         <div class="skills w-full mb-8 md:mb-0 order:0 md:order-1">
           <!-- Title  -->
@@ -460,7 +461,7 @@
 
         </div>
         <!-- service content  -->
-        <div class="content w-full mb-8 md:mb-0">
+        <div class="content w-full mb-24 lg:mb-0">
           <!-- Title  -->
           <h2 class="text-xl mb-3 font-rubik font-medium text-zinc-500 dark:text-slate-300">Service</h2>
           <!-- Content  -->
@@ -511,14 +512,14 @@
 
     <!-- Project Sections -->
     <section id="projects"
-      class="flex font-rubik flex-col justify-center aligns-center px-10 md:px-44 w-full h-auto space-x-5 md:h-dvh mb-20 md:mb-0">
+      class="flex font-rubik flex-col justify-center aligns-center px-10 lg:px-44 w-full h-auto space-x-5 lg:h-dvh mb-24 md:mb-0">
 
       <!-- TItle  -->
       <h1 class="block uppercase text-3xl mb-14 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
         Projects</h1>
 
       <!-- Content -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5">
         <!-- Items  -->
         <div
           class="w-full mb-3 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
@@ -603,49 +604,80 @@
 
     <!-- Contact Section  -->
     <section id="projects"
-      class="flex font-rubik flex-col justify-center aligns-center px-10 md:px-44 w-full h-auto space-x-5 md:h-dvh mb-20 md:mb-0">
+      class="flex font-rubik flex-col justify-center aligns-start px-10 lg:px-36 w-full h-auto space-x-5 lg:h-dvh mb-24 lg:mb-0">
 
       <!-- TItle  -->
       <h1 class="block uppercase text-3xl mb-14 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
         Contact</h1>
 
-      <!-- Contact Form  -->
-      <form action="" class="font-rubik">
-        <!-- name -->
-        <div class="max-w-sm mx-auto mb-5">
-          <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-700 dark:text-zinc-300">Your
-            Email</label>
-          <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
-                <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-                <path
-                  d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-              </svg>
-            </div>
-            <input type="text" id="email-address-icon"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500 dark:focus:border-sky-500"
-              placeholder="name@example.com">
+      <div class="flex flex-col lg:flex-row w-full items-start justify-center mb-5">
+        <!-- Contact Information  -->
+        <div class="w-full mb-24 lg:mb-0">
+          <!-- Title  -->
+          <span class="font-medium text-zinc-700 dark:text-zinc-400 text-2xl">Contact Information</span>
+          <!-- Infor  -->
+          <div class="mt-5 group text-slate-600 dark:text-zinc-400 flex aligns-center">
+            <i class="bx bx-envelope text-3xl me-3 text-zinc-600 dark:text-sky-400"></i> <span class="text-zinc-700 text-slate-600 dark:text-zinc-400 mt-2">heinhtetsan33455@gmail.com</span>
+          </div>
+          <div class="mt-5 group text-slate-600 dark:text-zinc-400 flex aligns-center">
+            <i class="bx bx-phone text-3xl me-3 text-zinc-600 dark:text-sky-400"></i> <span class="text-zinc-700 text-slate-600 dark:text-zinc-400 mt-2">+959 761 349 721</span>
+          </div>
+          <div class="mt-5 group text-slate-600 dark:text-zinc-400 flex aligns-center">
+            <i class="bx bx-map text-3xl me-3 text-zinc-600 dark:text-sky-400"></i> <span class="text-zinc-700 text-slate-600 dark:text-zinc-400 mt-2">Yangon, Thongwa Township</span>
+          </div>
+
+          <div class="text-sm ms-1  mt-8 mb-5 dark:text-cyan-700 text-slate-400">Follow me on - </div>
+          <!-- Social Media Link  -->
+          <div class="flex flex-row items-center justify-start">
+            <a href="" class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i class="bx text-4xl text-zinc-600 dark:text-cyan-400 bxl-facebook"></i></a>
+            <a href="" class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-messenger"></i></a>
+            <a href="" class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-twitter"></i></a>
+            <a href="" class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-linkedin"></i></a>
+            <a href="" class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-github"></i></a>
           </div>
         </div>
-        <!-- message  -->
-        <div class="max-w-sm mx-auto mb-5">
-          <label for="message" class="block mb-2 text-sm font-medium text-gray-700 dark:text-zinc-300">Your
-            message</label>
-          <textarea id="message" rows="5" style="resize: none;"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500 dark:focus:border-blue-500"
-            placeholder="Leave a comment..."></textarea>
+
+        <!-- Contact Form  -->
+        <div class="w-full">
+          <!-- Message Form  -->
+          <form action="" class="">
+            <!-- name -->
+            <div class=" mb-5">
+              <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-700 dark:text-zinc-300">Your
+                Email</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                    <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                    <path
+                      d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                  </svg>
+                </div>
+                <input type="text" id="email-address-icon"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-00 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500 dark:focus:border-sky-500"
+                  placeholder="name@example.com">
+              </div>
+            </div>
+            <!-- message  -->
+            <div class=" mb-5">
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-700 dark:text-zinc-300">Your
+                message</label>
+              <textarea id="message" rows="5" style="resize: none;"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500 dark:focus:border-blue-500"
+                placeholder="Leave a comment..."></textarea>
+            </div>
+            <!-- Buttons  -->
+            <!-- send button  -->
+            <button
+              class="text-sm flex items-center md:items-start bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
+              <span class="md:mt-1">Send</span> <i class="bx bx-send ml-1 text-lg"></i>
+            </button>
+          </form>
         </div>
-        <!-- Buttons  -->
-        <div class="flex aligns-center justify-end md:justify-center my-5 md:justify-start pr-5 md:pr-0">
-          <!-- Download cv  -->
-          <button
-            class="text-sm flex items-center md:items-start bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
-            <span class="md:mt-1">Send</span> <i class="bx bx-send ml-1 text-lg"></i>
-          </button>
-        </div>
-      </form>
+
+      </div>
+
     </section>
     <!-- End of Contact Section  -->
 
@@ -677,8 +709,8 @@
           </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
-            href="" class="hover:underline">Hein Htet San™</a>. All Rights Reserved.</span>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href=""
+            class="hover:underline">Hein Htet San™</a>. All Rights Reserved.</span>
       </div>
     </footer>
 
