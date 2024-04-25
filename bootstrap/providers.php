@@ -2,5 +2,6 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    // MongoDB\
+    App\Providers\FortifyServiceProvider::class,
+    App\Providers\JetstreamServiceProvider::class,
 ];
