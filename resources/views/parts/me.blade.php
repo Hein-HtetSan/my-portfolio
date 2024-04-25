@@ -9,7 +9,7 @@
         <!-- Image  -->
         <div class="col-span-4 md:col-span-1">
             <div class="flex items-center justify-center ml-0 md:ml-24">
-                <img src="./image/profile.jpg" class="object-fill  rounded-full shadow-lg border-4 border-zinc-100 w-72 h-72"
+                <img src="{{ asset('image/profile.jpg') }}" class="object-fill  rounded-full shadow-lg border-4 border-zinc-100 w-72 h-72"
                     alt="">
             </div>
         </div>

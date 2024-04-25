@@ -15,9 +15,9 @@
             <!-- Items  -->
             <div
                 class="w-full mb-3 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
+                {{-- <a href="#">
                     <img class="rounded-t-lg object-cover w-full" src="./image/images.jpg" alt="" />
-                </a>
+                </a> --}}
                 <div class="p-5">
                     <a href="#">
                         <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 dark:text-white">Noteworthy
