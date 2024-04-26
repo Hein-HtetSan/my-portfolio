@@ -35,10 +35,10 @@
             <!-- Buttons  -->
             <div class="flex flex-col sm:flex-row items-center justify-center">
                 <!-- Download cv  -->
-                <button
+                <a href="{{ route('download.cv') }}"
                     class="text-sm flex items-center bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200  border-slate-500 hover:bg-sky-500 shadow-lg">
                     <i class="bx bx-file me-1 text-lg"></i> <span class="md:mt-1">Download CV</span>
-                </button>
+                </a>
 
                 <div class="mx-1 my-2"></div>
 
