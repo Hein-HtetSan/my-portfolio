@@ -3,6 +3,6 @@
 
 @section('content')
 
-hello
+mail
 
 @endsection

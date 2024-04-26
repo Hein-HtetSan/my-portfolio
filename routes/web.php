@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProjectController;
 
 Route::get('/', function () {
     return redirect()->route('user.me');
@@ -12,9 +15,19 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('backend.home');
-    })->name('dashboard');
+
+    // admin section
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/admin/works', [AdminController::class, 'project'])->name('admin.project');
+    Route::get('/admin/mails', [AdminController::class, 'mail'])->name('admin.mail');
+
+    // project section
+    Route::get('/admin/projects', [ProjectController::class, 'index'])->name('project.list');
+    Route::get('/admin/project/create', [ProjectController::class, 'create'])->name('project.create');
+
+    // blog section
+    Route::get('/admin/blogs', [BlogController::class, 'index'])->name('blog.list');
+
 });
 
 

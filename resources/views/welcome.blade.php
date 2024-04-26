@@ -77,13 +77,13 @@
         <!-- Modal container -->
         <div class="bg-slate-50 dark:bg-slate-800 border-slate-300 border-2 p-8 rounded-lg shadow-lg w-full max-w-md">
             <!-- Modal content -->
-            <h2 class="text-xl font-regular mb-2 dark:text-slate-200 font-rubik">Welcome Back! <span class="text-sky-600 font-semibold">Lucas Hein</span> </h2>
+            <h2 class="text-xl font-regular text-slate-600 mb-2 dark:text-slate-200 font-rubik">Welcome Back! <span class="text-sky-600 font-semibold">Lucas Hein</span> </h2>
 
             <!-- Your form content -->
             <form class="mb-3" method="POST" action="{{ route('user.check') }}">
                 @csrf
-                <input type="text" class="w-full border-r-4 border-slate-300 border-1 font-rubik
-                rounded dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route">
+                <input type="text" class="w-full border-r-4 border-slate-300 border-1 font-rubik text-slate-700
+                rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route">
             </form>
             <small class="block text-sm text-slate-600 dark:text-green-500 mb-2 rounded font-rubik mb-3">
                 $ <b class="">cd /admin</b> or <b>admin</b> to login as admin <br>

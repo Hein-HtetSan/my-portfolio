@@ -58,7 +58,7 @@ class UserController extends Controller
                 break;
 
             default:
-                return back()->with('error', 'Your request not found. Please try again!');
+                return back()->with('error', 'Your request is invalid. Please try again!');
                 break;
         }
     }
