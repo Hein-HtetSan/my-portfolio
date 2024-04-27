@@ -24,6 +24,7 @@ Route::middleware([
     // project section
     Route::get('/admin/projects', [ProjectController::class, 'index'])->name('project.list');
     Route::get('/admin/project/create', [ProjectController::class, 'create'])->name('project.create');
+    Route::post('/admin/project/store', [ProjectController::class, 'store'])->name('project.store');
 
     // blog section
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('blog.list');

@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -101,29 +106,6 @@ dark:hover:bg-gray-700 focus:outline-none focus:ring-gray-200 dark:focus:ring-gr
     @stack('modals')
 
     @livewireScripts
-
-    <nav class="fixed bottom-0 left-0 right-0 bg-gray-50 shadow-md flex justify-center bg-transparent py-10">
-        <ul class="flex space-x-4 py-3 bg-slate-200 dark:bg-slate-800 px-10 py-5 rounded-lg border-2 border-slate-500 dark:border-slate-200">
-            <li>
-                <a href="{{ route("dashboard") }}" class="text-gray-600 dark:text-gray-200 hover:text-gray-800 px-4 py-2">
-                    <i class="bx bx-chart text-2xl {{ request()->routeIs('dashboard') ? 'text-sky-600 font-semibold' : '' }}"></i>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('admin.project') }}" class="text-gray-600 dark:text-gray-200 hover:text-gray-800 px-4 py-2">
-                    <i class="bx bx-code-curly text-2xl {{ request()->routeIs('admin.project') ? 'text-sky-600 font-semibold' : '' }}"></i>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('admin.mail') }}" class="text-gray-600 dark:text-gray-200 hover:text-gray-800 px-4 py-2">
-                    <i class="bx bx-envelope text-2xl {{ request()->routeIs('admin.mail') ? 'text-sky-600 font-semibold' : '' }}"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-
-
 
     <!-- Toggling Dark and light Theme  -->
     <script>

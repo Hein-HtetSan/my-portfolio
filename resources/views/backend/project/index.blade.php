@@ -15,6 +15,10 @@
 
     </div>
 
+    @if (session('success'))
+        <span class="block px-4 py-2 text-green-600 bg-green-200 rouned-lg">{{ session('success') }}</span>
+    @endif
+
     <div class="grid grid-cols-6 gap-4 block mt-6">
         <div class="col-span-3 md:col-span-2 text-slate-600 dark:text-slate-500">
             <div class="p-5 border-2 rounded-lg border-slate-400 shadow-2xl">
