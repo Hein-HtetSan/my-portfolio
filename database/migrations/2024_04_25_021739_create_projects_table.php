@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('short_desc')->nullable(true);
-            $table->string('content');
+            $table->longText('content');
             $table->string('demo')->nullable(true);
             $table->string('github')->nullable(true);
             $table->timestamps();

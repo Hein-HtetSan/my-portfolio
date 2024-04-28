@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,7 +16,8 @@ class AdminController extends Controller
     // project page
     public function project()
     {
-        return view('backend.work');
+        $projects = Project::with('covers', 'languages')->get();
+        return view('backend.work', compact('projects'));
     }
 
     // mail page

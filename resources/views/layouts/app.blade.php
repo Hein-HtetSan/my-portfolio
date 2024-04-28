@@ -89,7 +89,7 @@
     {{-- Dark and Light mode toggler  --}}
     <button id="theme-toggle" type="button"
         class="text-gray-500 z-50 dark:text-gray-400 hover:bg-gray-100 bg-gray-200 border-2 border-slate-400 dark:bg-slate-800
-        p-3 fixed md:bottom-10 bottom-32 right-8 flex
+        p-3 fixed bottom-10 right-8 flex shadow-xl
 dark:hover:bg-gray-700 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm">
         <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">

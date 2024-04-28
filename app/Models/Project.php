@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Cover;
+use App\Models\Language;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Project extends Model
 {
@@ -17,4 +19,14 @@ class Project extends Model
         'demo',
         'github',
     ];
+
+    public function covers()
+    {
+        return $this->hasMany(Cover::class);
+    }
+
+    public function languages()
+    {
+        return $this->belongsToMany(Language::class, 'project_languages', 'project_id', 'lang_id');
+    }
 }

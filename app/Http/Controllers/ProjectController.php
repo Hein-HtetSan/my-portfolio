@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Cover;
 use App\Models\Project;
 use App\Models\Language;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProjectLanguage;
 use App\Models\Project_Language;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use League\CommonMark\CommonMarkConverter;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class ProjectController extends Controller
 {
@@ -17,7 +20,8 @@ class ProjectController extends Controller
     // home page
     public function index()
     {
-        return view('backend.work');
+        $projects = Project::with('covers', 'languages')->get();
+        return view('backend.work', compact('projects'));
     }
 
     // create page
@@ -67,6 +71,38 @@ class ProjectController extends Controller
             'demo' => $request->demo ?? null
         ];
     }
+
+    // destroy project
+    public function destroy($id)
+    {
+        // First - delete project language relations
+        ProjectLanguage::where('project_id', $id)->delete();
+        // Second - remove images
+        $images = Cover::select('name')->where('project_id', $id)->get()->toArray();
+        foreach($images as $file)
+        {
+            if($file != null){
+                Storage::delete('public/'.$file['name']);
+            }
+        }
+        // Third - delete covers
+        Cover::where('project_id', $id)->delete();
+        // Fourth - delete project
+        Project::destroy($id);
+        // Optionally, you can return a response or redirect after deletion
+        return redirect()->route('project.list')->with('success', 'Project deleted successfully!');
+    }
+
+
+    // get by id
+    public function get($id)
+    {
+        $project = Project::with('covers', 'languages')->find($id);
+        $converter = new CommonMarkConverter();
+        $content = $converter->convertToHtml($project->content);
+        return view('backend.project.detail', compact('project', 'content'));
+    }
+
 
 
 

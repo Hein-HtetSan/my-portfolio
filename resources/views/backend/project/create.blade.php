@@ -3,18 +3,25 @@
 
 @section('content')
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <!-- Include Summernote CSS -->
+<!-- include libraries(jQuery, bootstrap) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 <section class="flex items-center justify-center w-full h-auto py-20">
     <main class="bg-white p-5 rounded-lg w-full md:w-1/2 shadow-lg">
 
+        <a href="{{ route('project.list') }}" class="text-slate-400 hover:text-sky-400 font-rubik">
+            Back
+        </a>
+
         <!-- Content for main section -->
-        <form action="{{ route('project.store') }}" method="POST" class="" enctype="multipart/form-data">
+        <form action="{{ route('project.store') }}" method="POST" class="mt-3" enctype="multipart/form-data">
             @csrf
             {{-- Image Field  --}}
             <div class="mb-3 relative">
@@ -63,9 +70,8 @@
             <div class="mb-3 relative">
                 <label for="" class="text-xs  font-rubik uppercase text-slate-400 mb-2 ">Details of Project</label>
                 <div class="mb-1">
-                    <small class="text-green-500 ">Markdown format is available.</small>
                 </div>
-                <textarea id="summernote" class="w-full rounded-lg text-slate-700 dark:text-slate-300  @error('content') border-red-500 @enderror" name="content"></textarea>
+                <textarea rows="5" style="resize: none;" class="w-full rounded-lg text-slate-700 dark:text-slate-300  @error('content') border-red-500 @enderror" name="content"></textarea>
                 @error('content')
                     <span class="text-red-600 text-sm font-rubik"><i class='bx bxs-error-circle'></i> {{ $message }} </span>
                 @enderror
@@ -108,22 +114,12 @@
         });
 
         $('#summernote').summernote({
-            height: 150, // Adjust the height as needed
-            toolbar: [
-                ['style', ['style']],
-                ['font', ['bold', 'underline', 'clear']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['table', ['table']],
-                ['insert', ['link', 'picture', 'video']],
-                ['view', ['fullscreen', 'codeview', 'help']]
-            ],
-            callbacks: {
-                onInit: function() {
-                    // Add custom classes to elements
-                    $('.note-editable').addClass('text-slate-700 dark:text-slate-300 ');
-                }
-            }
+            height: 220,
+        });
+
+        var noteBar = $('.note-toolbar');
+        noteBar.find('[data-toggle]').each(function() {
+            $(this).attr('data-bs-toggle', $(this).attr('data-toggle')).removeAttr('data-toggle');
         });
     });
 </script>
