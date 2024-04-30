@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,13 +16,24 @@ class UserController extends Controller
     // work page
     public function work()
     {
-        return view('parts.works');
+        $projects = Project::with(['covers', 'languages'])
+                    ->orderBy('created_at', 'asc')
+                    ->paginate(6);
+
+        return view('parts.works', compact('projects'));
     }
 
     // contact page
     public function contact()
     {
         return view('parts.contact');
+    }
+
+    // project detail
+    public function detail($id)
+    {
+        $project = Project::with(['covers', 'languages'])->find($id);
+        return view('parts.project.detail', compact('project'));
     }
 
     // download cv

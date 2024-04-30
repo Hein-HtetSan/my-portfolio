@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Language;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,5 +20,24 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Hein Htet San',
         //     'email' => 'heinhtetsan33455@gmail.com',
         // ]);
+        $languages = [
+            'HTML',
+            'CSS',
+            'Tailwindcss',
+            'Bootstrap',
+            'Python',
+            'PHP',
+            'Laravel',
+            'Java',
+            'Rust',
+            'JavaScript',
+            'JSP',
+            'SQL',
+        ];
+        for($i=0; $i < count($languages); $i++)
+        {
+            Language::create(['name' => $languages[$i]]);
+        }
+
     }
 }

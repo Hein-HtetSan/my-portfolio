@@ -16,16 +16,44 @@
 <section class="flex items-center justify-center w-full h-auto py-20">
     <main class="bg-white p-5 rounded-lg w-full md:w-1/2 shadow-lg">
 
-        <a href="{{ route('project.list') }}" class="text-slate-400 hover:text-sky-400 font-rubik">
+        <a href="{{ route('project.get', $project->id) }}" class="text-slate-400 hover:text-sky-400 font-rubik">
             Back
         </a>
 
         <!-- Content for main section -->
-        <form action="{{ route('project.store') }}" method="POST" class="mt-3" enctype="multipart/form-data">
+        <form action="{{ route('project.update', $project->id) }}" method="POST" class="mt-3" enctype="multipart/form-data">
             @csrf
             {{-- Image Field  --}}
             <div class="mb-3 relative">
+                {{-- project id  --}}
+                <input type="hidden" name="id" value="{{ $project->id }}">
                 <label for="file" class="text-xs  font-rubik uppercase text-slate-400 w-full mb-3">Cover Photo</label>
+                {{-- image count  --}}
+                <input type="hidden" value="{{ count($project['covers']) }}" id="image_count">
+                {{-- showing image  --}}
+                @if (count($project['covers']) == 3)
+                    <div class="grid grid-cols-12 flex flex-col md:flex-row gap-2 mb-5">
+                        <img src="{{ asset('storage/'.$project['covers'][0]->name) }}" alt="" class="col-span-12 rounded-lg"
+                        style="width: 100%; height: 40vh;">
+                        <img src="{{ asset('storage/'.$project['covers'][1]->name) }}" alt="" class="col-span-12 md:col-span-6 rounded-lg"
+                        style="width: 100%; height: 25vh;">
+                        <img src="{{ asset('storage/'.$project['covers'][2]->name) }}" alt="" class="col-span-12 md:col-span-6 rounded-lg"
+                        style="width: 100%; height: 25vh;">
+                    </div>
+                @elseif(count($project['covers']) == 2)
+                    <div class="grid grid-cols-12 flex flex-col md:flex-row gap-2 mb-5">
+                        <img src="{{ asset('storage/'.$project['covers'][0]->name) }}" alt="" class="col-span-12 md:col-span-6 rounded-lg"
+                        style="width: 100%; height: 40vh;">
+                        <img src="{{ asset('storage/'.$project['covers'][1]->name) }}" alt="" class="col-span-12 md:col-span-6 rounded-lg"
+                        style="width: 100%; height: 40vh;">
+                    </div>
+                @else
+                    <div class="grid grid-cols-12 flex flex-col md:flex-row gap-2 mb-5">
+                        <img src="{{ asset('storage/'.$project['covers'][0]->name) }}" alt="" class="col-span-12 rounded-lg"
+                        style="width: 100%; height: 54vh;">
+                    </div>
+                @endif
+                {{-- image picker  --}}
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="row">
@@ -40,7 +68,8 @@
             {{-- Title Field  --}}
             <div class="mb-3 relative">
                 <label for="" class="absolute top-2 left-3 text-xs  font-rubik uppercase text-slate-400">Project Title</label>
-                <input type="text" class="w-full rounded-lg pt-6 @error('title') border-red-500 @enderror" name="title" value="{{ old('title') }}">
+                <input type="text" class="w-full rounded-lg pt-6 @error('title') border-red-500 @enderror" name="title"
+                value="{{ $project->title }}">
                 @error('title')
                     <span class="text-red-600 text-sm font-rubik"><i class='bx bxs-error-circle'></i> {{ $message }} </span>
                 @enderror
@@ -48,7 +77,8 @@
             {{-- Short Desc Field  --}}
             <div class="mb-3 relative">
                 <label for="" class="absolute top-2 left-3 text-xs  font-rubik uppercase text-slate-400">Short Description </label>
-                <input type="text" class="w-full rounded-lg pt-6  @error('short_desc') border-red-500 @enderror" name="short_desc" value="{{ old('short_desc') }}">
+                <input type="text" class="w-full rounded-lg pt-6  @error('short_desc') border-red-500 @enderror" name="short_desc"
+                value="{{ $project->short_desc }}">
                 @error('short_desc')
                     <span class="text-red-600 text-sm font-rubik"><i class='bx bxs-error-circle'></i> {{ $message }} </span>
                 @enderror
@@ -56,10 +86,12 @@
             {{-- Tech stack field  --}}
             <div class="mb-3 relative">
                 <label for="" class="absolute top-2 left-3 text-xs  font-rubik uppercase text-slate-400">Tech Stack</label>
-                <select name="lang" id="lang" class="w-full rounded-lg pt-7 px-3  @error('lang') border-red-500 @enderror">
+                <select name="lang" id="lang" class="w-full rounded-lg pt-7 px-3 pb-2  @error('lang') border-red-500 @enderror">
                     <option value=""  class="font-rubik">Choose Language</option>
                     @foreach ($languages as $lang)
-                        <option value="{{ $lang->id }}" class="font-rubik">{{ $lang->name }}</option>
+                        <option value="{{ $lang->id }}" class="font-rubik" @if ( $project['languages'][0]->pivot->lang_id == $lang->id)
+                            selected
+                        @endif>{{ $lang->name }}</option>
                     @endforeach
                 </select>
                 @error('lang')
@@ -72,7 +104,7 @@
                 <div class="mb-1">
                 </div>
                 <textarea id="summernote" class="w-full rounded-lg text-slate-700 dark:text-slate-300  @error('content') border-red-500 @enderror" name="content">
-                    {{ old('title') }}
+                    {{ $project->content }}
                 </textarea>
                 @error('content')
                     <span class="text-red-600 text-sm font-rubik"><i class='bx bxs-error-circle'></i> {{ $message }} </span>
@@ -82,7 +114,7 @@
             <div class="mb-3 relative">
                 <label for="" class="absolute top-2 left-3 text-xs  font-rubik uppercase text-slate-400">GitHub</label>
                 <input type="text" class="w-full rounded-lg pt-6  @error('github') border-red-500 @enderror" name="github"
-                value="{{ old('github') }}">
+                value="{{ $project->github }}">
                 @error('github')
                     <span class="text-red-600 text-sm font-rubik"><i class='bx bxs-error-circle'></i> {{ $message }} </span>
                 @enderror
@@ -90,10 +122,10 @@
             {{-- Demo field  --}}
             <div class="mb-3 relative">
                 <label for="" class="absolute top-2 left-3 text-xs  font-rubik uppercase text-slate-400">Demo (Optional) </label>
-                <input type="text" class="w-full rounded-lg pt-6" name="demo" value="{{ old('demo') }}">
+                <input type="text" class="w-full rounded-lg pt-6" name="demo" value="{{ $project->demo }}">
             </div>
             <button type="submit" class="px-4 py-2 bg-sky-500 text-slate-200 dark:bg-sky-800 dark:text-slate-300
-            font-rubik uppercase rounded-lg">Create</button>
+            font-rubik uppercase rounded-lg">Update</button>
         </form>
     </main>
 </section>
@@ -104,29 +136,39 @@
 
 {{-- Image picker plusgin  --}}
 <script src="{{ asset('js/Multiple-Image-Picker-jQuery-Spartan/dist/js/spartan-multi-image-picker-min.js') }}"></script>
+
 <script>
     // Initialize Summernote
     $(document).ready(function() {
 
+        // Define a JavaScript variable to hold the data
+        var covers = {!! json_encode($project['covers']) !!};
+        var image_count = $('#image_count').val(); // get the image count
+        var max = 3; // max of image count
+        console.log(`image count = ${image_count}`)
+
+        // Transform the data into the format required by SpartanMultiImagePicker
+        var coverData = covers.map(function(cover) {
+            return {
+                id: cover.id,
+                src: "{{ asset('storage') }}" + '/' + cover.name,
+                name: cover.name
+            };
+        });
+        console.log(coverData)
+
+        // for multi image picker config
         $("#demo").spartanMultiImagePicker({
             fieldName:  'fileUpload[]',
             rowHeight :'200px',
-            rowHeight :'200px',
-            maxCount : 3,
+            maxCount : max - parseInt(image_count),
             groupClassName :'col-span-12 md:col-span-4 ',
+            data: coverData,
         });
 
+        // for summernote config
         $('#summernote').summernote({
             height: 220,
-            callbacks: {
-                onInit: function() {
-                    // Select all text elements within Summernote
-                    var $textElements = $(this).siblings('.note-editor').find('.note-editable').find('*');
-
-                    // Apply custom classes to text elements
-                    $textElements.addClass('text-slate-700 dark:text-slate-300');
-                }
-            }
         });
 
         var noteBar = $('.note-toolbar');

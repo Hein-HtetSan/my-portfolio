@@ -5,13 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Cover;
 use App\Models\Project;
 use App\Models\Language;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProjectLanguage;
 use App\Models\Project_Language;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use League\CommonMark\CommonMarkConverter;
 use GrahamCampbell\Markdown\Facades\Markdown;
 
 class ProjectController extends Controller
@@ -20,7 +18,7 @@ class ProjectController extends Controller
     // home page
     public function index()
     {
-        $projects = Project::with('covers', 'languages')->get();
+        $projects = Project::with('covers', 'languages')->orderBy('created_at', 'asc')->paginate(6);
         return view('backend.work', compact('projects'));
     }
 
@@ -98,24 +96,59 @@ class ProjectController extends Controller
     public function get($id)
     {
         $project = Project::with('covers', 'languages')->find($id);
-        $converter = new CommonMarkConverter();
-        $content = $converter->convertToHtml($project->content);
-        return view('backend.project.detail', compact('project', 'content'));
+        // $content = Markdown::convertToHtml($project->content);
+        // dd($content, $project->content);
+        return view('backend.project.detail', compact('project'));
+    }
+
+    // edit
+    public function edit($id)
+    {
+        $project = Project::with('covers', 'languages')->find($id); // get the specific project
+        $languages = Language::get(); // get the languages for select options
+
+        // return to view
+        return view('backend.project.edit', compact('project', 'languages'));
+    }
+
+    // update
+    public function update(Request $request, $id)
+    {
+        $this->validateProject($request, "update");
+        // collect stage
+        $p_data = $this->getProjectInfo($request, $id); // collect project info
+        Project::where('id', $id)->update($p_data);
+
+        // store image
+        // foreach ($request->fileUpload as $file) {
+        //     if ($file->isValid()) {
+        //         $filename = uniqid() . $file->getClientOriginalName(); // rename file with unique id
+        //         $file->storeAs('public', $filename);  // store the file to storage
+        //         Cover::create(['name' => $filename, 'project_id' => $project_id]); // store to the cover database
+        //     }
+        // }
+        // store to project language asso table
+        $p_l_data = [
+            'project_id' => $id,
+            'lang_id' => $request->lang,
+        ];
+        ProjectLanguage::where('project_id', $id)->update($p_l_data); // store to the database
+        // if all done return to home
+        return redirect()->route('project.list')->with(['success' => 'Updated project.']);
     }
 
 
 
-
     // validate the project form
-    private function validateProject(Request $request)
+    private function validateProject(Request $request, $mode = "store")
     {
         $rule = [
-            'title' => 'required|string|max:255',
+            'title' => $mode == 'store' ? 'required|string|max:255' : 'required|string|max:255|unique:projects,id,'.$request->id,
             'short_desc' => 'required|string|min:10',
             'lang' => 'required',
             'content' => 'required|string|min:10',
             'github' => 'required',
-            'fileUpload' => 'required'
+            'fileUpload' => $mode == 'store' ? 'required' : '',
         ];
         $message = [
             'title.required' => 'Project title can not be blank!',

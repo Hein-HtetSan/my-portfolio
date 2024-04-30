@@ -7,20 +7,20 @@
         <ul class="flex-col md:flex-row flex md:space-x-4 mt-4 md:mt-0 md:text-sm md:font-medium">
           <li class="rounded-full px-6 py-2 md:hover:bg-gray-300 md:dark:hover:bg-sky-700 {{ request()->routeIs('user.me') ? 'bg-sky-200' : '' }}">
             <a href="{{ route('user.me') }}"
-              class="flex items-center text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
-              <i class="bx bx-user text-lg {{ request()->routeIs('user.me') ? '' : 'dark:text-slate-300' }}"></i>
+              class="flex items-center text-slate-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
+              <i class="bx bx-user text-lg text-slate-700 {{ request()->routeIs('user.me') ? '' : 'dark:text-slate-300' }}"></i>
             </a>
           </li>
           <li class="rounded-full px-6 py-2 md:hover:bg-gray-300 md:dark:hover:bg-sky-700 {{ request()->routeIs('user.works') ? 'bg-sky-200 ' : '' }}">
             <a href="{{ route('user.works') }}"
-              class="flex items-center text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
-              <i class="bx bx-code-curly text-lg {{ request()->routeIs('user.works') ? '' : 'dark:text-slate-300' }} "></i>
+              class="flex items-center text-slate-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
+              <i class="bx bx-code-curly text-slate-700 text-lg {{ request()->routeIs('user.works') ? '' : 'dark:text-slate-300' }} "></i>
             </a>
           </li>
           <li class="rounded-full px-6 py-2 md:hover:bg-gray-300 md:dark:hover:bg-sky-700 {{ request()->routeIs('user.contact') ? 'bg-sky-200 ' : '' }}">
             <a href="{{ route('user.contact') }}"
-              class="flex items-center text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
-              <i class="bx bx-envelope text-lg {{ request()->routeIs('user.contact') ? '' : 'dark:text-slate-300' }}"></i>
+              class="flex items-center text-slate-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
+              <i class="bx bx-envelope text-slate-700 text-lg {{ request()->routeIs('user.contact') ? '' : 'dark:text-slate-300' }}"></i>
             </a>
           </li>
 

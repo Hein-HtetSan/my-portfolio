@@ -27,6 +27,8 @@ Route::middleware([
     Route::post('/admin/project/store', [ProjectController::class, 'store'])->name('project.store');
     Route::get('/admin/project/delete/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
     Route::get('/admin/project/get/{id}', [ProjectController::class, 'get'])->name('project.get');
+    Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::post('/admin/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
 
     // blog section
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('blog.list');
@@ -38,6 +40,9 @@ Route::middleware([
 Route::get('/me', [UserController::class, 'me'])->name('user.me');
 Route::get('/works', [UserController::class, 'work'])->name('user.works');
 Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
+
+// project
+Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
 
 // download the cvfile
 Route::get('/download', [UserController::class, 'download'])->name('download.cv');

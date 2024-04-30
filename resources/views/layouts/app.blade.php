@@ -68,7 +68,7 @@
 <body class="font-sans antialiased ">
     <x-banner />
 
-    <div class="min-h-screen bg-gray-100 dark:bg-slate-700">
+    <div class="min-h-screen bg-gray-100 dark:bg-slate-800">
         @livewire('navigation-menu')
 
         <!-- Page Heading -->

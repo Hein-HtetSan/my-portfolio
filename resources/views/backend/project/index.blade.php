@@ -40,25 +40,27 @@
         <h3 class="text-2xl uppercase font-rubik block text-center mt-10 text-slate-400">There's no project.</h3>
     @endif
 
-    <div class="grid grid-cols-6 gap-4 block mt-6">
+    <div class="grid grid-cols-12 gap-4 block mt-6">
 
         @foreach ($projects as $project)
-        <div class="col-span-6 md:col-span-2 text-slate-600 dark:text-slate-500">
-            <div class=" rounded-lg shadow-2xl bg-white dark:bg-slate-600 overflow-hidden">
+        <div class="col-span-12 md:col-span-4 text-slate-700 dark:text-slate-600">
+            <div class=" rounded-lg shadow-2xl bg-white dark:bg-gray-800 overflow-hidden border-2
+            border-slate-300 dark:border-slate-600">
                 {{-- {{ $project }} --}}
-                <img src="{{ asset('storage/' . $project['covers'][0]->name) }}" alt="" class="mb-3 w-full rounded-t-lg"
-                style="width: 100% !important; height: 30vh !important;">
+                {{-- <img src="{{ asset('storage/' . $project['covers'][0]->name) }}" alt="" class="mb-3 w-full rounded-t-lg"
+                style="width: 100% !important; height: 25vh !important;"> --}}
                 {{-- card-body  --}}
                 <div class="p-3">
                     {{-- Tech Stack  --}}
                     @foreach ($project['languages'] as $language)
-                        <span class="px-5 py-1 font-normal rounded-full bg-sky-200 text-sky-600 dark:bg-sky-500 dark:text-sky-800 text-sm">{{ $language['name'] }}</span>
+                        <span class="px-5 py-1 font-normal rounded-full bg-sky-200 text-sky-600 dark:bg-sky-500
+                        dark:text-sky-800 text-xs">{{ $language['name'] }}</span>
                     @endforeach
-                    <h2 class="text-slate-700 mt-3 dark:text-slate-200 uppercase font-rubik font-semibold text-2xl flex items-center justify-start gap-2">
+                    <h2 class="text-slate-700 mt-3 dark:text-slate-300 uppercase font-rubik font-semibold text-lg flex items-center justify-start gap-2">
                         {{ $project->title }}
                     </h2>
                     {{-- sub heading  --}}
-                    <span class="text-slate-600 dark:text-slate-300 font-rubik font-regular">
+                    <span class="text-slate-600 dark:text-slate-300 font-rubik font-regular text-md">
                         {{ $project->short_desc }}
                     </span>
 
@@ -66,26 +68,26 @@
                     <div class="flex items-center justify-between mt-5">
                         {{-- detail button  --}}
                         <div class="flex items-center justify-start gap-2">
-                            <a href="{{ route('project.get', $project->id) }}" class="px-3 py-2 rounded-lg bg-sky-600 dark:bg-sky-400 text-slate-200 dark:text-slate-700 shadow
-                        ">
+                            <a href="{{ route('project.get', $project->id) }}" class="px-2 py-1 rounded-lg bg-sky-800 dark:bg-sky-600 text-slate-200 shadow">
                             <i class="bx bx-detail"></i> Detail
-                        </a>
-                        <a href="{{ route('project.destroy', $project->id) }}" class="px-3 py-2 rounded-lg bg-red-600 dark:bg-red-400 text-slate-200 dark:text-slate-700 shadow
-                        ">
-                            <i class="bx bx-trash-alt"></i>
-                        </a>
+                            </a>
+                            <a href="{{ route('project.destroy', $project->id) }}" class="px-2 py-1 rounded-lg
+                                bg-red-600 dark:bg-red-400 text-slate-200 shadow
+                            ">
+                                <i class="bx bx-trash-alt"></i>
+                            </a>
                         </div>
 
                         <div class="flex items-center justify-center gap-2">
                             {{-- demo link or github --}} {{-- github  --}}
                             @if ($project->github)
-                                <a href="{{ $project->github }}" class="pt-3 text-slate-600 dark:text-slate-300">
-                                    <i class="bx bxl-github text-3xl"></i>
+                                <a href="{{ $project->github }}" class="text-slate-300 dark:text-slate-500">
+                                    <i class="bx bxl-github text-2xl"></i>
                                 </a>
                             @endif
                             @if ($project->demo)
-                                <a href="{{ $project->demo }}" class="pt-3 text-slate-600 dark:text-slate-300">
-                                    <i class="bx bx-play text-md bg-slate-200 px-2 py-2 rounded-full text-sky-500 dark:bg-slate-500"></i>
+                                <a href="{{ $project->demo }}" class="">
+                                    <i class="bx bx-play-circle text-md text-slate-300 dark:text-slate-500 text-2xl"></i>
                                 </a>
                             @endif
                         </div>
@@ -95,6 +97,9 @@
         </div>
         @endforeach
     </div>
+
+    <!-- Pagination  -->
+    {{ $projects->links() }}
 
 </div>
 

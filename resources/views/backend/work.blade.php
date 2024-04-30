@@ -11,7 +11,9 @@
         <small class="text-slate-700 dark:text-slate-200 uppercase text-sm font-rubik mb-3">Actions</small> <br>
         <!-- Content for aside -->
         <div class="flex md:flex-col flew-row mt-3 gap-3">
-            <a href="{{ route('project.list') }}" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200">
+            <a href="{{ route('project.list') }}" class="px-4 py-2 rounded-lg
+            {{ request()->routeIs('project.list') || request()->routeIs('admin.project') ? 'bg-sky-200 dark:bg-sky-600' : 'bg-slate-200 dark:bg-slate-600' }}
+            text-slate-800 dark:text-slate-200">
                 <i class="bx bx-layer-plus"></i> <span class="text-sm uppercase font-semibold ml-2">Project</span>
             </a>
             <a href="{{ route('blog.list') }}" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200">

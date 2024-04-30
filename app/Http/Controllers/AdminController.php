@@ -16,7 +16,9 @@ class AdminController extends Controller
     // project page
     public function project()
     {
-        $projects = Project::with('covers', 'languages')->get();
+        $projects = Project::with('covers', 'languages')
+                    ->orderBy('created_at', 'desc') // Replace 'created_at' with your desired column to order by
+                    ->paginate(6);
         return view('backend.work', compact('projects'));
     }
 

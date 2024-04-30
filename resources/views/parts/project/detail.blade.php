@@ -1,14 +1,16 @@
-@extends('layouts.app')
+@extends('welcome')
+
+@section('title', $project->title)
 
 
 @section('content')
 
-<section class="flex items-center justify-center w-full h-auto py-10">
+<section class="flex items-center justify-center w-full h-auto py-20 mt-20">
 
     <main class="bg-white dark:bg-slate-800 p-5 rounded-lg w-full md:w-3/4 shadow-xl">
 
                 {{-- back button  --}}
-                <a href="{{ route('project.list') }}" class="text-slate-400 font-rubik hover:text-sky-400"
+                <a href="{{ route('user.works') }}" class="text-slate-400 font-rubik hover:text-sky-400"
                 > <i class="bx bx-arrow-left"></i> Back</a>
 
         {{-- Project title  --}}
@@ -84,16 +86,6 @@
                 </div>
                 @endif
             </div>
-        </div>
-
-        {{-- action title  --}}
-        <div class="mt-6 mb-3">
-            <span class="text-md font-rubik uppercase text-slate-500 font-semibold">Actions</span>
-        </div>
-        {{-- button  --}}
-        <div class="flex items-center justify-start gap-2">
-            <a href="{{ route('project.edit', $project->id) }}" class="px-4 py-2 text-slate-300 bg-sky-700 font-rubik rounded-lg "> <i class="bx bx-edit"></i> Edit</a>
-            <a href="{{ route('project.destroy', $project->id   ) }}" class="px-4 py-2 text-slate-300 bg-red-700 font-rubik rounded-lg "> <i class="bx bx-trash-alt"></i> Remove</a>
         </div>
 
     </main>
