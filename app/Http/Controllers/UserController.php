@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Mail\Subscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -41,6 +44,29 @@ class UserController extends Controller
     {
         $filePath = storage_path('app/public/cv.pdf');
         return response()->download($filePath);
+    }
+
+    // send mail
+    public function sendMail(Request $request)
+    {
+        // validate the message
+        $this->checkMail($request);
+        $sender_mail = $request->sender_mail;  // get sender mail
+        $message = $request->message; // get sender message
+        // Send the email to the admin email address using the sender's email address as the reply-to address
+        Mail::to('heinhtetsan33455@gmail.com')->send(new Subscriber($sender_mail, $message));
+        // return view
+        return redirect()->route('user.contact')->with(['success' => 'Success, you sent message to developer.']);
+    }
+
+    private function checkMail(Request $request)
+    {
+        // define rule
+        $rule = [
+            'sender_mail' => 'required|email',
+            'message' => 'required',
+        ];
+        Validator::make($request->all(), $rule)->validate();
     }
 
     // check useer

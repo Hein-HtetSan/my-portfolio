@@ -109,7 +109,7 @@
         @yield('content')
 
 
-
+    {{-- session error  --}}
     @if(session('error'))
         <div id="alertBox" class="bg-red-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0  mx-auto w-max">
             <div class="max-w-xl mx-auto">
@@ -117,6 +117,29 @@
             </div>
         </div>
     @endif
+
+    {{-- session success  --}}
+    @if(session('success'))
+        <div id="alertBox" class="bg-green-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0  mx-auto w-max">
+            <div class="max-w-xl mx-auto">
+                <p class="text-green-800">{{ session('success') }}</p>
+            </div>
+        </div>
+    @endif
+
+    {{-- validation error  --}}
+    @if ($errors->any())
+        <div id="alertBox" class="bg-red-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0 mx-auto w-max">
+            <div class="max-w-xl mx-auto">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="text-red-800">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
+
         <!-- Footer  -->
         @include('parts.footer')
 
