@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProjectController;
@@ -29,6 +30,14 @@ Route::middleware([
     Route::get('/admin/project/get/{id}', [ProjectController::class, 'get'])->name('project.get');
     Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
     Route::post('/admin/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+
+    // mailing section
+    Route::get('/admin/mails/all', [MailController::class, 'index'])->name('mail.list'); // inbox mail list
+    Route::get('/admin/mails/send', [MailController::class, 'sendList'])->name('mail.send.list'); // sent mail list
+    Route::get('/admin/mails/{id}', [MailController::class, 'get'])->name('mail.get'); // read specific mail
+    Route::post('/admin/mails/{id}/send', [MailController::class, 'sendMail'])->name('mail.admin.send'); // send mail to subscriber
+    Route::get('/admin/mails/destroy/{id}', [MailController::class, 'destroy'])->name('mail.destroy'); // permanent delete the mail
+    Route::get('/admin/mails/star/{id}', [MailController::class, 'star'])->name('mail.star'); // star the mail
 
     // blog section
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('blog.list');

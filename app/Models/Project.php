@@ -4,8 +4,9 @@ namespace App\Models;
 
 use App\Models\Cover;
 use App\Models\Language;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use MongoDB\Laravel\Eloquent\Model;
 
 class Project extends Model
 {

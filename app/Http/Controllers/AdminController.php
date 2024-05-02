@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Mail as UserMail;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -25,6 +26,7 @@ class AdminController extends Controller
     // mail page
     public function mail()
     {
-        return view('backend.mail');
+        $mails = UserMail::whereIn('status', [0, 1, 2])->orderBy('created_at', 'asc')->paginate(10);
+        return view('backend.mail', compact('mails'));
     }
 }

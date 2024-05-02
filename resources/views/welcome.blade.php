@@ -103,7 +103,7 @@
     @include('parts.navbar')
     <!-- End of Navbar  -->
 
-    <main>
+    <main class="p-4">
 
         {{-- main section  --}}
         @yield('content')

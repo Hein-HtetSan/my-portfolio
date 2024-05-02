@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('sender_mail');
             $table->longText('message');
+            $table->integer('status');
             $table->timestamps();
         });
     }

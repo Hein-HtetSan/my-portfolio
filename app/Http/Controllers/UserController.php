@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Mail as UserMail;
 use App\Mail\Subscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -53,10 +54,22 @@ class UserController extends Controller
         $this->checkMail($request);
         $sender_mail = $request->sender_mail;  // get sender mail
         $message = $request->message; // get sender message
-        // Send the email to the admin email address using the sender's email address as the reply-to address
-        Mail::to('heinhtetsan33455@gmail.com')->send(new Subscriber($sender_mail, $message));
-        // return view
-        return redirect()->route('user.contact')->with(['success' => 'Success, you sent message to developer.']);
+        try {
+            // Send the email to the admin email address using the sender's email address as the reply-to address
+            Mail::to('heinhtetsan33455@gmail.com')->send(new Subscriber($sender_mail, $message));
+            // save to mail database
+            $mail = [
+                'sender_mail' => $sender_mail,
+                'message' => $message,
+                'status' => 0,
+            ];
+            UserMail::create($mail);
+            // return view
+            return redirect()->route('user.contact')->with(['success' => 'Success, you sent message to developer.']);
+        } catch (SendException $e) {
+            // return network error
+            return redirect()->back()->with('error', 'Failed to send email. Please try again later.');
+        }
     }
 
     private function checkMail(Request $request)

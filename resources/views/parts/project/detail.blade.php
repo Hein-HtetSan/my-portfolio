@@ -1,13 +1,13 @@
 @extends('welcome')
 
-@section('title', $project->title)
+@section('title', 'projects/'. $project->title)
 
 
 @section('content')
 
-<section class="flex items-center justify-center w-full h-auto py-20 mt-20">
+<section class="flex items-center justify-center w-full h-auto py-10 md:py-20 mt-6 md:mt-20">
 
-    <main class="bg-white dark:bg-slate-800 p-5 rounded-lg w-full md:w-3/4 shadow-xl">
+    <main class="bg-white dark:bg-slate-900 p-5 rounded-lg w-full md:w-3/4 shadow-xl">
 
                 {{-- back button  --}}
                 <a href="{{ route('user.works') }}" class="text-slate-400 font-rubik hover:text-sky-400"
