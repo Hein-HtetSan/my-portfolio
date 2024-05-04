@@ -26,7 +26,7 @@ class AdminController extends Controller
     // mail page
     public function mail()
     {
-        $mails = UserMail::whereIn('status', [0, 1, 2])->orderBy('created_at', 'asc')->paginate(10);
+        $mails = UserMail::whereIn('status', [0, 1, 2])->orderBy('created_at', 'desc')->paginate(5);
         return view('backend.mail', compact('mails'));
     }
 }

@@ -16,33 +16,41 @@
             text-slate-800 dark:text-slate-200">
                 <i class="bx bx-paperclip"></i> <span class="text-sm uppercase font-semibold ml-2">Inbox</span>
             </a>
-            <a href="{{ route('mail.send.list') }}" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200">
+            <a href="{{ route('mail.send.list') }}" class="px-4 py-2 rounded-lg
+            {{ request()->routeIs('mail.send.list') ? 'bg-sky-200 dark:bg-sky-600' : 'bg-slate-200 dark:bg-slate-600' }}
+            text-slate-800 dark:text-slate-200">
                 <i class="bx bx-send"></i> <span class="text-sm uppercase font-semibold ml-2">Send</span>
             </a>
         </div>
         {{-- others  --}}
         <small class="text-slate-700 dark:text-slate-200 uppercase text-sm font-rubik mb-3 ">Others</small> <br>
         <div class="flex md:flex-col flex-row mt-3 gap-3">
-            <a href="{{ route('mail.send.list') }}" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200">
+            <a href="{{ route('mail.starlist') }}" class="px-4 py-2 rounded-lg
+            {{ request()->routeIs('mail.starlist') ? 'bg-sky-200 dark:bg-sky-600' : 'bg-slate-200 dark:bg-slate-600' }}
+                text-slate-800 dark:text-slate-200">
                 <i class="bx bx-star"></i> <span class="text-sm uppercase font-semibold ml-2">Stared</span>
             </a>
-            <a href="{{ route('mail.send.list') }}" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200">
+            <a href="{{ route('mail.archived.list') }}" class="px-4 py-2 rounded-lg
+            {{ request()->routeIs('mail.archived.list') ? 'bg-sky-200 dark:bg-sky-600' : 'bg-slate-200 dark:bg-slate-600' }}
+            text-slate-800 dark:text-slate-200">
                 <i class="bx bx-box"></i> <span class="text-sm uppercase font-semibold ml-2">Archieved</span>
             </a>
-            <a href="{{ route('mail.send.list') }}" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200">
+            <a href="{{ route('mail.trashed.list') }}" class="px-4 py-2 rounded-lg
+            {{ request()->routeIs('mail.trashed.list') ? 'bg-sky-200 dark:bg-sky-600' : 'bg-slate-200 dark:bg-slate-600' }}
+            text-slate-800 dark:text-slate-200">
                 <i class="bx bx-trash"></i> <span class="text-sm uppercase font-semibold ml-2">Trash</span>
             </a>
         </div>
     </aside>
     <main class="col-span-6  md:col-span-5  p-3">
+
         <!-- Content for main section -->
-        @if (request()->routeIs('admin.mail') || request()->routeIs('mail.list'))
-            @include('backend.mail.inbox')
-        @elseif (request()->routeIs('blog.list'))
-            @include('backend.mail.send');
+        @if (request()->routeIs("mail.getById"))
+            @include('backend.mails.detail');
         @else
-            @include('backend.mail.inbox')
+            @include('backend.mails.inbox')
         @endif
+
     </main>
 </section>
 

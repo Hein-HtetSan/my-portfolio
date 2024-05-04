@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Email Template</title>
-    <!-- Include Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Tailwind CSS classes */
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .p-6 { padding: 24px; }
+        .max-w-2xl { max-width: 42rem; }
+        .mx-auto { margin-right: auto; margin-left: auto; }
+        .bg-white { background-color: #ffffff; }
+        .rounded-md { border-radius: 0.375rem; }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .font-semibold { font-weight: 600; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-gray-700 { color: #4b5563; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    </style>
 </head>
 <body class="bg-gray-100 p-6">
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md">
@@ -22,3 +35,4 @@
     </div>
 </body>
 </html>
+

@@ -8,6 +8,7 @@ use App\Mail\Subscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Swift_TransportException;
 
 class UserController extends Controller
 {
@@ -55,22 +56,39 @@ class UserController extends Controller
         $sender_mail = $request->sender_mail;  // get sender mail
         $message = $request->message; // get sender message
         try {
-            // Send the email to the admin email address using the sender's email address as the reply-to address
-            Mail::to('heinhtetsan33455@gmail.com')->send(new Subscriber($sender_mail, $message));
-            // save to mail database
-            $mail = [
-                'sender_mail' => $sender_mail,
-                'message' => $message,
-                'status' => 0,
-            ];
-            UserMail::create($mail);
-            // return view
-            return redirect()->route('user.contact')->with(['success' => 'Success, you sent message to developer.']);
-        } catch (SendException $e) {
-            // return network error
+            // Check network state
+            if ($this->checkNetworkState()) {
+                // Send the email to the admin email address using the sender's email address as the reply-to address
+                Mail::to('heinhtetsan33455@gmail.com')->send(new Subscriber($sender_mail, $message));
+                // Save to mail database
+                $mail = [
+                    'sender_mail' => $sender_mail,
+                    'message' => $message,
+                    'status' => 0,
+                ];
+                UserMail::create($mail);
+                // Return view
+                return redirect()->route('user.contact')->with(['success' => 'Success, you sent message to developer.']);
+            } else {
+                // Return network error
+                return redirect()->back()->with('error', 'Failed to send email. Please check your network connection and try again later.');
+            }
+        } catch (Swift_TransportException $e) {
+            // Return email sending error
             return redirect()->back()->with('error', 'Failed to send email. Please try again later.');
         }
     }
+
+    private function checkNetworkState() {
+        $connected = @fsockopen("www.google.com", 80);
+        // Attempt to open a socket connection to Google's server on port 80 (HTTP)
+        if ($connected){
+            fclose($connected); // Close the connection
+            return true; // Connection successful
+        }
+        return false; // Connection failed
+    }
+
 
     private function checkMail(Request $request)
     {
