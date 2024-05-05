@@ -77,7 +77,7 @@
             <span class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2">#tag1</span>
             <span class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200">#tag2</span>
         </div> --}}
-        <form id="replyForm" class="hidden px-6 py-4" method="POST" action="">
+        <form id="replyForm" class="hidden px-6 py-4" method="POST" action="{{ route('mail.reply', $mail->id) }}">
             @csrf
             <!-- Your reply form content goes here -->
             <h3 class="text-sky-600 dark:text-sky-500">to: <span>{{ $mail->sender_mail }}</span></h3>

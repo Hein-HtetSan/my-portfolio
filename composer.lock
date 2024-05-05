@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d36ee339a2d06f41a8aa300d1221ebc",
+    "content-hash": "2f15a8cd62e68390122b91de48f8a508",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2208,16 +2208,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.4.11",
+            "version": "v3.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "8a78d0c3ae9b4c96a2d8932ea4ac0dc782325de0"
+                "reference": "54dd265c17f7b5200627eb9690590e7cbbad1027"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/8a78d0c3ae9b4c96a2d8932ea4ac0dc782325de0",
-                "reference": "8a78d0c3ae9b4c96a2d8932ea4ac0dc782325de0",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/54dd265c17f7b5200627eb9690590e7cbbad1027",
+                "reference": "54dd265c17f7b5200627eb9690590e7cbbad1027",
                 "shasum": ""
             },
             "require": {
@@ -2232,7 +2232,7 @@
             },
             "require-dev": {
                 "calebporzio/sushi": "^2.1",
-                "laravel/framework": "^10.0|^11.0",
+                "laravel/framework": "^10.15.0|^11.0",
                 "laravel/prompts": "^0.1.6",
                 "mockery/mockery": "^1.3.1",
                 "orchestra/testbench": "^8.21.0|^9.0",
@@ -2272,7 +2272,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.4.11"
+                "source": "https://github.com/livewire/livewire/tree/v3.4.12"
             },
             "funding": [
                 {
@@ -2280,7 +2280,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-24T12:14:15+00:00"
+            "time": "2024-05-02T17:10:37+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -3040,6 +3040,85 @@
                 "source": "https://github.com/antonioribeiro/google2fa/tree/v8.0.1"
             },
             "time": "2022-06-13T21:57:56+00:00"
+        },
+        {
+            "name": "protonemedia/laravel-splade",
+            "version": "1.4.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/protonemedia/laravel-splade.git",
+                "reference": "18d5c2475f8842825d0d543e92ba0d00beddc85e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/protonemedia/laravel-splade/zipball/18d5c2475f8842825d0d543e92ba0d00beddc85e",
+                "reference": "18d5c2475f8842825d0d543e92ba0d00beddc85e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.48.2|^11.0.1",
+                "php": "^8.2|^8.3"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.10|^8.1",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0|^9.0",
+                "phpunit/phpunit": "^10.4"
+            },
+            "suggest": {
+                "kirschbaum-development/eloquent-power-joins": "Required to enable support sorting by (nested) relationships in Splade Tables (^3.0)",
+                "maatwebsite/excel": "Required to enable support exports in Splade Tables (^3.1)",
+                "spatie/fractalistic": "Required to enable support for Fractal transformers (^2.9)"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ProtoneMedia\\Splade\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Animation": "ProtoneMedia\\Splade\\Facades\\Animation",
+                        "SEO": "ProtoneMedia\\Splade\\Facades\\SEO",
+                        "Splade": "ProtoneMedia\\Splade\\Facades\\Splade",
+                        "Toast": "ProtoneMedia\\Splade\\Facades\\Toast"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ProtoneMedia\\Splade\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pascal Baljet",
+                    "email": "pascal@protone.media",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Splade: the magic of Inertia.js with the simplicity of Blade.",
+            "homepage": "https://github.com/protonemedia/laravel-splade",
+            "keywords": [
+                "laravel",
+                "laravel-splade",
+                "protonemedia"
+            ],
+            "support": {
+                "issues": "https://github.com/protonemedia/laravel-splade/issues",
+                "source": "https://github.com/protonemedia/laravel-splade/tree/1.4.19"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/pascalbaljet",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-20T14:18:47+00:00"
         },
         {
             "name": "psr/clock",

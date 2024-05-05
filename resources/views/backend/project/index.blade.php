@@ -11,13 +11,17 @@
             <i class="bx bx-plus"></i> Create
         </a>
         {{-- Search Button  --}}
-        <div class="relative">
-            <input type="text" placeholder="Search..." class="w-full h-10 px-4 py-2 text-gray-700 text-slate-700 dark:text-slate-200
+        <form class="relative" method="POST" action="{{ route('project.search') }}">
+            @csrf
+            <input type="text" name="searchTerm" value="{{ old('searchTerm') }}" placeholder="Search..." class="w-full h-10 px-4 py-2 text-gray-700 text-slate-700 dark:text-slate-200
             bg-slate-100 dark:bg-slate-700 border border-gray-300 rounded-md focus:outline-none focus:border-slate-500 ">
-            <button class="absolute top-0 right-0 mt-3 mr-4 focus:outline-none">
+            <button type="submit" class="absolute top-0 right-0 mt-3 mr-4 focus:outline-none">
                 <i class='bx bx-search text-slate-600 dark:text-slate-200'></i>
             </button>
-        </div>
+            @if (request()->routeIs('project.search'))
+                <a href="{{ route('project.list') }}" class="text-slate-600 dark:text-slate-400">Clear</a>
+            @endif
+        </form>
 
     </div>
 

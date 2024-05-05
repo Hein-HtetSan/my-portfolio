@@ -30,12 +30,13 @@ Route::middleware([
     Route::get('/admin/project/get/{id}', [ProjectController::class, 'get'])->name('project.get');
     Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
     Route::post('/admin/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::post('/admin/project/search/', [ProjectController::class, 'search'])->name('project.search');
 
     // mailing section
     Route::get('/admin/mails/all', [MailController::class, 'index'])->name('mail.list'); // inbox mail list
     Route::get('/admin/mails/send', [MailController::class, 'sendList'])->name('mail.send.list'); // sent mail list
     Route::get('/admin/mails/get/{id}', [MailController::class, 'getById'])->name('mail.getById'); // read specific mail
-    // Route::post('/admin/mails/{id}/send', [MailController::class, 'sendMail'])->name('mail.admin.send'); // send mail to subscriber
+    Route::post('/admin/mails/reply/{id}', [MailController::class, 'reply'])->name('mail.reply'); // send mail to subscriber
     Route::get('/admin/mails/destroy/{id}', [MailController::class, 'destroy'])->name('mail.destroy'); // permanent delete the mail
 
     Route::get('/admin/mails/star/{id}', [MailController::class, 'star'])->name('mail.star'); // star the mail
@@ -56,17 +57,42 @@ Route::middleware([
 });
 
 
-// for guest
-Route::get('/me', [UserController::class, 'me'])->name('user.me');
-Route::get('/works', [UserController::class, 'work'])->name('user.works');
-Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
-// project
-Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
-// download the cvfile
-Route::get('/download', [UserController::class, 'download'])->name('download.cv');
-// mail send
-Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
 
-// check user
-Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
+Route::middleware(['splade'])->group(function () {
+    // for guest
+    Route::get('/me', [UserController::class, 'me'])->name('user.me');
+    Route::get('/works', [UserController::class, 'work'])->name('user.works');
+    Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
+    // project
+    Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
+    // download the cvfile
+    Route::get('/download', [UserController::class, 'download'])->name('download.cv');
+    // mail send
+    Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
+
+    // check user
+    Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
+
+    // Registers routes to support the interactive components...
+    // Route::spladeWithVueBridge();
+
+    // Registers routes to support password confirmation in Form and Link components...
+    // Route::spladePasswordConfirmation();
+
+    // Registers routes to support Table Bulk Actions and Exports...
+    // Route::spladeTable();
+
+    // Registers routes to support async File Uploads with Filepond...
+    // Route::spladeUploads();
+});

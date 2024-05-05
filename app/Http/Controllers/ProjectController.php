@@ -8,6 +8,7 @@ use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Models\ProjectLanguage;
 use App\Models\Project_Language;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -19,6 +20,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::with('covers', 'languages')->orderBy('created_at', 'asc')->paginate(6);
+        // Splade::onlazy(fn() => Projec)
         return view('backend.work', compact('projects'));
     }
 
@@ -35,6 +37,7 @@ class ProjectController extends Controller
         // dd($request->toArray());
         $this->validateProject($request); // validation stage
         $project_id = mt_rand(1000, 9999); // for project id
+
         // collect stage
         $p_data = $this->getProjectInfo($request, $project_id); // collect project info
         Project::create($p_data);
@@ -96,9 +99,10 @@ class ProjectController extends Controller
     public function get($id)
     {
         $project = Project::with('covers', 'languages')->find($id);
+        $currentUrl = urlencode(URL::current());
         // $content = Markdown::convertToHtml($project->content);
         // dd($content, $project->content);
-        return view('backend.project.detail', compact('project'));
+        return view('backend.project.detail', compact('project', 'currentUrl'));
     }
 
     // edit
@@ -135,6 +139,20 @@ class ProjectController extends Controller
         ProjectLanguage::where('project_id', $id)->update($p_l_data); // store to the database
         // if all done return to home
         return redirect()->route('project.list')->with(['success' => 'Updated project.']);
+    }
+
+    // search the project
+    public function search(Request $request)
+    {
+        // search term
+        $searchTerm = $request->searchTerm;
+        $projects = Project::with(['covers', 'languages'])->paginate(8);
+        // dd($projects);
+        if($projects)
+        {
+            return view('backend.work', compact('projects', 'searchTerm'));
+        }
+        return back()->with(['error' => 'Not found']);
     }
 
 

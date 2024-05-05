@@ -17,9 +17,6 @@
             fw-500">
                 {{ $project->title }}
             </h1>
-            <a href="" class="px-4 py-2 text-slate-500 dark:text-slate-300 bg-slate-200 rounded-lg dark:bg-slate-700 font-rubik">
-                <i class="bx bx-share"></i> Share
-            </a>
         </div>
 
         {{-- image section  --}}
@@ -83,6 +80,24 @@
                     <span class="text-slate-500 font-rubik uppercase">Check Demo: </span><a href="{{ $project->demo }}" class="px-4 py-2 text-slate-300 bg-slate-500 font-rubik rounded-lg "> <i class="bx bx-play"></i> Demo</a>
                 </div>
                 @endif
+                <div class="flex items-center justify-start gap-3">
+                    <!-- Facebook Share Button -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $currentUrl }}" class="px-4 py-2 text-slate-500 dark:text-slate-300 bg-slate-200 rounded-lg dark:bg-slate-700 font-rubik" target="_blank">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+
+                    <!-- LinkedIn Share Button -->
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $currentUrl }}" class="px-4 py-2 text-slate-500 dark:text-slate-300 bg-slate-200 rounded-lg dark:bg-slate-700 font-rubik" target="_blank">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <!-- Generic Share Button (e.g., via email) -->
+                    <a href="mailto:?subject=Check out this project&body={{ $currentUrl }}" class="px-4 py-2 text-slate-500 dark:text-slate-300 bg-slate-200 rounded-lg dark:bg-slate-700 font-rubik">
+                        <i class="bx bx-envelope"></i>
+                    </a>
+                    <a href="https://x.com/intent/tweet?url={{ $currentUrl }}&text={{ urlencode($project->name) }}" class="px-4 py-2 text-slate-500 dark:text-slate-300 bg-slate-200 rounded-lg dark:bg-slate-700 font-rubik" target="_blank">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
             </div>
         </div>
 

@@ -3,36 +3,49 @@
 @section('title', 'workshops')
 
 @section('content')
-    <section id="projects"
-        class="flex font-rubik flex-col justify-center aligns-center px-10 lg:px-44 w-full h-auto space-x-5 lg:h-dvh mb-24 md:mb-0">
+
+<section id="projects"
+        class="flex font-rubik flex-col justify-center px-3 aligns-center px-0 lg:px-44 w-full h-auto lg:h-dvh mb-24 md:mb-0">
 
         <!-- TItle  -->
-        <h1 class="block uppercase text-3xl mb-14 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
+        <h1 class="uppercase text-3xl mb-5 md:mb-14 mt-14 md:mt-0 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
             Projects</h1>
 
-            @if (count($projects) == 0)
+            {{-- @if (count($projects) == 0)
                 <h1 class="text-center text-lg text-slate-600 dark:text-slate-500 uppercase"> <i class="bx bx-error"></i> There is no projects!</h1>
-            @endif
-        <!-- Content -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5">
+            @endif --}}
 
-            <!-- Items  -->
-            @foreach ($projects as $project)
+        <!-- Content -->
+        <!-- Items  -->
+
+    <x-splade-lazy>
+        
+        <x-slot:placeholder>
+            <div class="flex items-center justify-center w-full">
+                <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
+                <h1 class="text-slate-600 dark:text-slate-500 text-xl">Loading projects...</h1>
+            </div>
+        </x-slot:placeholder>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5">
+        @foreach ($projects as $project)
             <div
                 class="w-full mb-3 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                 {{-- <a href="#">
-                    <img class="rounded-t-lg object-cover w-full" src="./image/images.jpg" alt="" />
-                </a> --}}
+                            <img class="rounded-t-lg object-cover w-full" src="./image/images.jpg" alt="" />
+                        </a> --}}
                 <div class="p-5">
                     {{-- tech stack  --}}
                     <div class="flex items-center justify-start gap-3 my-3">
                         @foreach ($project['languages'] as $language)
-                            <span class="px-5 py-1 font-normal rounded-full uppercase bg-sky-200 text-sky-600 dark:bg-sky-300 dark:text-sky-800 text-sm">{{ $language['name'] }}</span>
+                            <span
+                                class="px-5 py-1 font-normal rounded-full uppercase bg-sky-200 text-sky-600 dark:bg-sky-300 dark:text-sky-800 text-sm">{{ $language['name'] }}</span>
                         @endforeach
                     </div>
                     {{-- Project title  --}}
                     <a href="#">
-                        <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 dark:text-white">{{ $project->title }}</h5>
+                        <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 dark:text-white">
+                            {{ $project->title }}</h5>
                     </a>
                     {{-- Project short description  --}}
                     <p class="mb-3 font-regular text-gray-700 dark:text-gray-400">
@@ -50,16 +63,16 @@
                     </a>
                 </div>
             </div>
-            @endforeach
+        @endforeach
         </div>
 
         <!-- Pagination  -->
         {{ $projects->links() }}
-
+    </x-splade-lazy>
 
 
     </section>
 
-    </section>
-    <!-- End of project sections  -->
+
+
 @endsection

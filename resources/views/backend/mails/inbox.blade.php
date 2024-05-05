@@ -48,7 +48,13 @@
             <div class="grid grid-cols-12">
                 <div class="col-span-8 flex flex-col items-start justify-center">
                     <small class="text-slate-600 dark:text-sky-400">{{ $mail->created_at->diffForHumans() }}</small>
-                    <h4 class="text-slate-700 dark:text-slate-300 text-md font-semibold"><small>From: </small> {{ $mail->sender_mail }}</h4>
+                    <h4 class="text-slate-700 dark:text-slate-300 text-md font-semibold"><small>
+                    @if ($mail->status == 2)
+                        To
+                    @else
+                        From
+                    @endif:
+                    </small> {{ $mail->sender_mail }}</h4>
                     <p class="text-slate-600 dark:text-slate-400"> <small>Message: </small> {{ Str::limit($mail->message, 60, '...') }}
                     </p>
                 </div>

@@ -4,11 +4,20 @@
 
 @section('content')
     <section id="projects"
-        class="flex font-rubik flex-col justify-center aligns-start px-10 lg:px-36 w-full h-auto space-x-5 lg:h-dvh mb-24 lg:mb-0">
+        class="flex font-rubik flex-col justify-center aligns-start px-10 lg:px-36 w-full h-auto  lg:h-dvh mb-24 lg:mb-0">
 
         <!-- TItle  -->
-        <h1 class="block uppercase text-3xl mb-14 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
-            Contact</h1>
+        <h1 class="block uppercase text-3xl mb-6 mt-14 mb:mt-0 md:mb-14 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
+            Contact
+        </h1>
+
+        <x-splade-lazy>
+        <x-slot:placeholder>
+            <div class="flex items-center justify-center w-full">
+                <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
+                <h1 class="text-slate-600 dark:text-slate-500 text-xl">Loading content information...</h1>
+            </div>
+        </x-slot:placeholder>
 
         <div class="flex flex-col lg:flex-row w-full items-start justify-center mb-5">
             <!-- Contact Information  -->
@@ -94,6 +103,6 @@
             </div>
 
         </div>
-
+        </x-splade-lazy>
     </section>
 @endsection

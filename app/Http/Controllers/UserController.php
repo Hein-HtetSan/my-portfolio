@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Models\Mail as UserMail;
 use App\Mail\Subscriber;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Validator;
 use Swift_TransportException;
+use App\Models\Mail as UserMail;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Mail;
+use ProtoneMedia\Splade\Facades\Splade;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -21,11 +23,11 @@ class UserController extends Controller
     // work page
     public function work()
     {
-        $projects = Project::with(['covers', 'languages'])
+        $projects = Splade::onLazy(fn() => Project::with(['covers', 'languages'])
                     ->orderBy('created_at', 'asc')
-                    ->paginate(6);
+                    ->paginate(6));
 
-        return view('parts.works', compact('projects'));
+        return view('parts.works', ['projects' => $projects]);
     }
 
     // contact page
@@ -37,8 +39,9 @@ class UserController extends Controller
     // project detail
     public function detail($id)
     {
-        $project = Project::with(['covers', 'languages'])->find($id);
-        return view('parts.project.detail', compact('project'));
+        $project = Splade::onLazy(fn () => Project::with(['covers', 'languages'])->find($id));
+        $currentUrl = urlencode(URL::current());
+        return view('parts.project.detail', ['project' => $project, 'currentUrl' => $currentUrl]);
     }
 
     // download cv
