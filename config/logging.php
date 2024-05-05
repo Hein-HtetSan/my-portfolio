@@ -58,6 +58,11 @@ return [
             'ignore_exceptions' => false,
         ],
 
+        'vercel' => [
+            'driver' => 'vercel',
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),

@@ -19,15 +19,14 @@
     <!-- text animated  -->
     {{-- <script src="./js/text-animate.js"></script> --}}
     <script src="{{ asset('js/direct.js') }}"></script>
-    {{-- Tailwind css  --}}
-    <script src="https://cdn.tailwindcss.com"></script>
 
     {{-- Using Tailwindcss by vite js  --}}
     @spladeHead
     {{-- splade js  --}}
     @vite('resources/js/app.js')
 
-
+    {{-- Tailwind css  --}}
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwindcss Config  -->
     <script>
         tailwind.config = {
