@@ -11,6 +11,7 @@
           </li>
           <li>
             <a href="{{ route('user.works') }}" class=" hover:underline me-4 md:me-6">Workshops</a>
+          </li>
           <li>
             <a href="{{ route('user.contact') }}" class="  hover:underline">Contact</a>
           </li>

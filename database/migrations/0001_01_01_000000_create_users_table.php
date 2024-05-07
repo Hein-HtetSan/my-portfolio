@@ -14,9 +14,18 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('age');
+            $table->date('date_of_birth');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            // other attributes
+            $table->string('github')->nullable(true);
+            $table->longText('cv_form')->nullable(true);
+            $table->longText('introduce')->nullable(true);
+            $table->longText('profile')->nullable(true);
+
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

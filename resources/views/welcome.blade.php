@@ -20,13 +20,8 @@
     {{-- <script src="./js/text-animate.js"></script> --}}
     <script src="{{ asset('js/direct.js') }}"></script>
 
-    {{-- Using Tailwindcss by vite js  --}}
-    @spladeHead
-    {{-- splade js  --}}
-    @vite('resources/js/app.js')
-
-    {{-- Tailwind css  --}}
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Tailwindcss Config  -->
     <script>
         tailwind.config = {
@@ -48,7 +43,6 @@
             darkMode: "class",
         };
     </script>
-
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (
@@ -155,7 +149,7 @@
         var themeToggleLightIcon = document.getElementById(
             "theme-toggle-light-icon"
         );
-
+        console.log('theme section')
         // Change the icons inside the button based on previous settings
         if (
             localStorage.getItem("color-theme") === "dark" ||
@@ -167,9 +161,10 @@
             themeToggleDarkIcon.classList.remove("hidden");
         }
 
-        var themeToggleBtn = document.getElementById("theme-toggle");
+        var themeToggleBtn = document.querySelector("#theme-toggle");
 
         themeToggleBtn.addEventListener("click", function() {
+            console.log('clicked')
             // toggle icons inside button
             themeToggleDarkIcon.classList.toggle("hidden");
             themeToggleLightIcon.classList.toggle("hidden");

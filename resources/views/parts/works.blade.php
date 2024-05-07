@@ -5,21 +5,21 @@
 @section('content')
 
 <section id="projects"
-        class="flex font-rubik flex-col justify-center px-3 aligns-center px-0 lg:px-44 w-full h-auto lg:h-dvh mb-24 md:mb-0">
+        class="flex font-rubik flex-col justify-center px-3 aligns-center px-0 lg:px-44 w-full h-auto h-dvh mb-24 md:mb-0">
 
         <!-- TItle  -->
         <h1 class="uppercase text-3xl mb-5 md:mb-14 mt-14 md:mt-0 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
             Projects</h1>
 
-            {{-- @if (count($projects) == 0)
-                <h1 class="text-center text-lg text-slate-600 dark:text-slate-500 uppercase"> <i class="bx bx-error"></i> There is no projects!</h1>
-            @endif --}}
-
         <!-- Content -->
         <!-- Items  -->
 
     <x-splade-lazy>
-        
+
+        @if (count($projects) == 0)
+                <h1 class="text-center text-lg text-slate-600 dark:text-slate-500 uppercase"> <i class="bx bx-error"></i> There is no projects!</h1>
+            @endif
+
         <x-slot:placeholder>
             <div class="flex items-center justify-center w-full">
                 <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">

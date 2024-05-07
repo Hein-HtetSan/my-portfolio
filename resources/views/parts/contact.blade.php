@@ -95,9 +95,9 @@
                     </div>
                     <!-- Buttons  -->
                     <!-- send button  -->
-                    <button
+                    <button id="sendButton"
                         class="text-sm flex items-center md:items-start bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
-                        <span class="md:mt-1">Send</span> <i class="bx bx-send ml-1 text-lg"></i>
+                        <span class="">Send</span> <i class="bx bx-send ml-1 text-lg"></i>
                     </button>
                 </form>
             </div>
@@ -105,4 +105,42 @@
         </div>
         </x-splade-lazy>
     </section>
+
+<script>
+    console.log('runing')
+    document.getElementById('sendButton').addEventListener('click', function() {
+    var button = this;
+    var buttonText = button.querySelector('span');
+    var icon = button.querySelector('i');
+
+    console.log('clicked')
+
+    // Disable button to prevent multiple clicks
+    button.disabled = true;
+
+    // Change button text to "Sending..."
+    buttonText.textContent = 'Sending...';
+
+    // Remove existing icon and replace with a spinning icon
+    icon.classList.remove('bx-send');
+    icon.classList.add('bx bx-loader bx-spin');
+
+    // Perform the sending operation (e.g., AJAX request)
+    // Once the operation is complete, re-enable the button and restore the original content
+    setTimeout(function() {
+        // Simulate sending operation completion
+        // Remove spinner and restore original icon
+        icon.classList.remove('bx-loader', 'bx-spin');
+        icon.classList.add('bx-send');
+
+        // Restore original button text
+        buttonText.textContent = 'Send';
+
+        // Re-enable the button
+        button.disabled = false;
+    }, 2000); // Replace 2000 with the duration of your sending operation in milliseconds
+});
+</script>
+
+
 @endsection

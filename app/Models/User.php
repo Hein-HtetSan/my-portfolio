@@ -29,6 +29,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'age',
+        'date_of_birth',
+        'github',
+        'cv_form',
+        'introduce',
+        'profile',
     ];
 
     /**
