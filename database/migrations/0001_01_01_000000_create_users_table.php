@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('age');
-            $table->date('date_of_birth');
+            $table->string('date_of_birth')->default('26-04-2004');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -25,6 +25,9 @@ return new class extends Migration
             $table->longText('cv_form')->nullable(true);
             $table->longText('introduce')->nullable(true);
             $table->longText('profile')->nullable(true);
+            $table->string('phone')->nullable(true);
+            $table->longText('address')->nullable(true);
+            $table->longText('git_api')->nullable(true);
 
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();

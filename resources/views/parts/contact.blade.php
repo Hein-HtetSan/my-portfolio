@@ -11,7 +11,7 @@
             Contact
         </h1>
 
-        <x-splade-lazy>
+        {{-- <x-splade-lazy> --}}
         <x-slot:placeholder>
             <div class="flex items-center justify-center w-full">
                 <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
@@ -103,7 +103,7 @@
             </div>
 
         </div>
-        </x-splade-lazy>
+        {{-- </x-splade-lazy> --}}
     </section>
 
 <script>

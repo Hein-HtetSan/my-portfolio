@@ -3,11 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        @spladeHead
-        @vite('resources/js/app.js')
+        {{-- @vite('resources/js/app.js') --}}
+        {{-- @vite('resources/css/app.css') --}}
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans bg-gray-100 dark:bg-slate-800 scrollbar-thin">
         @splade
     </body>
 </html>

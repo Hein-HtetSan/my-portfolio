@@ -14,7 +14,7 @@
         <!-- Content -->
         <!-- Items  -->
 
-    <x-splade-lazy>
+    {{-- <x-splade-lazy> --}}
 
         @if (count($projects) == 0)
                 <h1 class="text-center text-lg text-slate-600 dark:text-slate-500 uppercase"> <i class="bx bx-error"></i> There is no projects!</h1>
@@ -68,7 +68,7 @@
 
         <!-- Pagination  -->
         {{ $projects->links() }}
-    </x-splade-lazy>
+    {{-- </x-splade-lazy> --}}
 
 
     </section>

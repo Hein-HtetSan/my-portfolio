@@ -1,4 +1,4 @@
-import "./bootstrap";
+// import "./bootstrap";
 import "../css/app.css";
 import "@protonemedia/laravel-splade/dist/style.css";
 

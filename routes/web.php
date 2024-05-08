@@ -51,6 +51,15 @@ Route::middleware([
     Route::get('/admin/mails/trash/{id}', [MailController::class, 'trash'])->name('mail.trash'); // put into trash
     Route::get('/admin/mails/untrash/{id}', [MailController::class, 'untrash'])->name('mail.untrash'); // out of trash
 
+    Route::get('/admin/profile/intro', [AdminController::class, 'intro_page'])->name('profile.intro'); // intro message edit
+    Route::post('/admin/profile/intro/save', [AdminController::class, 'intro_save'])->name('profile.intro.save'); // save message edit
+
+    Route::get('/admin/profile/contact', [AdminController::class, 'contact_page'])->name('profile.contact'); // contact page edit
+    Route::post('/admin/profile/contact/save', [AdminController::class, 'contact_save'])->name('profile.contact.save'); // save contact edit
+
+    Route::get('/admin/profile/github', [AdminController::class, 'github_page'])->name('profile.github');
+    Route::post('/admin/profile/github/save', [AdminController::class, 'github_save'])->name('profile.github.save');
+
     // blog section
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('blog.list');
 

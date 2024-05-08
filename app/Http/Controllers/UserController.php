@@ -23,11 +23,11 @@ class UserController extends Controller
     // work page
     public function work()
     {
-        $projects = Splade::onLazy(fn() => Project::with(['covers', 'languages'])
+        $projects = Project::with(['covers', 'languages'])
                     ->orderBy('created_at', 'asc')
-                    ->paginate(6));
+                    ->paginate(6);
 
-        return view('parts.works', ['projects' => $projects]);
+        return view('parts.works', compact('projects'));
     }
 
     // contact page
@@ -39,9 +39,9 @@ class UserController extends Controller
     // project detail
     public function detail($id)
     {
-        $project = Splade::onLazy(fn () => Project::with(['covers', 'languages'])->find($id));
+        $project = Project::with(['covers', 'languages'])->find($id);
         $currentUrl = urlencode(URL::current());
-        return view('parts.project.detail', ['project' => $project, 'currentUrl' => $currentUrl]);
+        return view('parts.project.detail', compact('project'));
     }
 
     // download cv

@@ -35,6 +35,9 @@ class User extends Authenticatable
         'cv_form',
         'introduce',
         'profile',
+        'phone',
+        'address',
+        'git_api',
     ];
 
     /**

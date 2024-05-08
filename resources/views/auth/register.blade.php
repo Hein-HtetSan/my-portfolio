@@ -73,7 +73,6 @@
 
 <x-guest-layout>
 
-        <x-validation-errors class="mb-4" />
 
         <form id="signUpForm" class="p-10 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 mt-10
             border-gray-100 mb-8"
@@ -91,20 +90,28 @@
                 <p class="text-md text-gray-700 leading-tight text-center mt-8 mb-5">Personal Detail</p>
 
                 <div class="mb-6">
-
                     <input type="text" placeholder="Name" name="name" value="{{ old('name') }}"
                         class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
                         oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+                    @error('name')
+                        <small class="text-red-500 font-rubik font-semibold">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-6">
                     <input type="number" placeholder="Age" name="age" value="{{ old('age') }}"
                         class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
                         oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+                    @error('age')
+                        <small class="text-red-500 font-rubik font-semibold">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-6">
                     <input type="date" placeholder="Birthday (eg. month-day-year)" name="date_of_birth" value="{{ old('birth') }}"
                         class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
                         oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+                    @error('date_of_birth')
+                        <small class="text-red-500 font-rubik font-semibold">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <!-- step two -->
@@ -114,16 +121,25 @@
                     <input type="email" placeholder="Email Address" name="email" value="{{ old('email') }}"
                         class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
                         oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+                    @error('email')
+                        <small class="text-red-500 font-rubik font-semibold">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-6">
                     <input type="password" placeholder="Password" name="password" value="{{ old('password') }}"
                         class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
                         oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+                    @error('password')
+                        <small class="text-red-500 font-rubik font-semibold">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-6">
                     <input type="password" placeholder="Confirm Password" name="password_confirmation" value="{{ old('password_confirmation') }}"
                         class="w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200"
                         oninput="this.className = 'w-full px-4 py-3 rounded-md text-gray-700 font-medium border-solid border-2 border-gray-200'" />
+                    @error('password_confirmation')
+                        <small class="text-red-500 font-rubik font-semibold">{{ $message }}</small>
+                    @enderror
                 </div>
             </div>
             <!-- step three -->

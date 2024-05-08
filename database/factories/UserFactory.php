@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'name' => 'Hein Htet San',
             'email' => 'heinhtetsan33455@gmail.com',
             'email_verified_at' => now(),
+            'age' => 20,
             'password' => static::$password ??= Hash::make('ykpt22270'),
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,

@@ -17,8 +17,9 @@
         <div class="text-center col-span-4 md:col-span-2">
 
             <!-- Name -->
-            <h3 class="uppercase font-medium font-rubik text-3xl mb-5 md:mb-5 text-gray-700 dark:text-zinc-300">Hein Htet
-                San</h3>
+            <h3 class="uppercase font-medium font-rubik text-3xl mb-5 md:mb-5 text-gray-700 dark:text-zinc-300">I'm
+                <span class="text-sky-600 dark:text-sky-400">Hein Htet San</span>
+            </h3>
 
             <!-- What I do  -->
             <div class="h-10">

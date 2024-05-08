@@ -9,7 +9,7 @@
 
     <main class="bg-white dark:bg-slate-900 p-5 rounded-lg w-full md:w-3/4 shadow-xl">
 
-        <x-splade-lazy>
+        {{-- <x-splade-lazy> --}}
 
             {{-- lazy content placeholder --}}
             <x-slot:placeholder>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-        </x-splade-lazy>
+        {{-- </x-splade-lazy> --}}
 
     </main>
 </section>
