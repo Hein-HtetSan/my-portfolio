@@ -19,6 +19,6 @@ export default defineConfig({
         }),
     ],
     ssr: {
-        noExternal: ["vue", "@protonemedia/laravel-splade"]
+        // noExternal: ["vue", "@protonemedia/laravel-splade"]
     },
 });
