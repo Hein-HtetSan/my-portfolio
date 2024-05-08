@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'content')
+@section('title', 'contact')
 
 @section('content')
     <section id="projects"
@@ -8,14 +8,14 @@
 
         <!-- TItle  -->
         <h1 class="block uppercase text-3xl mb-6 mt-14 mb:mt-0 md:mb-14 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
-            Contact
+            Contact 💌
         </h1>
 
         {{-- <x-splade-lazy> --}}
         <x-slot:placeholder>
             <div class="flex items-center justify-center w-full">
                 <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
-                <h1 class="text-slate-600 dark:text-slate-500 text-xl">Loading content information...</h1>
+                <h1 class="text-slate-600 dark:text-slate-500 text-xl">Loading contact information...</h1>
             </div>
         </x-slot:placeholder>
 
@@ -87,10 +87,11 @@
                     </div>
                     <!-- message  -->
                     <div class=" mb-5">
-                        <label for="message" class="bldock mb-2 text-sm font-medium text-gray-700 dark:text-zinc-300">Your
-                            message</label>
+                        <label for="message" class="bldock mb-2 text-sm font-medium text-gray-700 dark:text-zinc-300 ">Your
+                            message
+                        </label>
                         <textarea id="message" rows="5" style="resize: none;" name="message"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500 dark:focus:border-blue-500"
+                            class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-500 dark:focus:border-blue-500"
                             placeholder="Leave a comment..."></textarea>
                     </div>
                     <!-- Buttons  -->

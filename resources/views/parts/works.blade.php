@@ -9,7 +9,8 @@
 
         <!-- TItle  -->
         <h1 class="uppercase text-3xl mb-5 md:mb-14 mt-14 md:mt-0 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
-            Projects</h1>
+            Projects 🎨
+        </h1>
 
         <!-- Content -->
         <!-- Items  -->
