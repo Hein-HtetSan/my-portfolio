@@ -18,15 +18,9 @@
     {{-- <x-splade-lazy> --}}
 
         @if (count($projects) == 0)
-                <h1 class="text-center text-lg text-slate-600 dark:text-slate-500 uppercase"> <i class="bx bx-error"></i> There is no projects!</h1>
-            @endif
+            <h1 class="text-center text-lg text-slate-600 dark:text-slate-500 uppercase"> <i class="bx bx-error"></i> There is no projects!</h1>
+        @endif
 
-        <x-slot:placeholder>
-            <div class="flex items-center justify-center w-full">
-                <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
-                <h1 class="text-slate-600 dark:text-slate-500 text-xl">Loading projects...</h1>
-            </div>
-        </x-slot:placeholder>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5">
         @foreach ($projects as $project)

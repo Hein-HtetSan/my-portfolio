@@ -11,13 +11,6 @@
 
         {{-- <x-splade-lazy> --}}
 
-            {{-- lazy content placeholder --}}
-            <x-slot:placeholder>
-                <div class="flex w-full items-center justify-center py-20">
-                    <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
-                    <h1 class="dark:text-slate-400 text-2xl">Loading Content</h1>
-                </div>
-            </x-slot:placeholder>
 
             {{-- back button  --}}
             <a href="{{ route('user.works') }}" class="text-slate-400 font-rubik hover:text-sky-400"

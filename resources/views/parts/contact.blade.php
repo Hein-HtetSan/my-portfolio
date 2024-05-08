@@ -11,14 +11,6 @@
             Contact 💌
         </h1>
 
-        {{-- <x-splade-lazy> --}}
-        <x-slot:placeholder>
-            <div class="flex items-center justify-center w-full">
-                <img src="{{ asset('image/Pulse@1x-0.9s-200px-200px.svg') }}" width="70" alt="">
-                <h1 class="text-slate-600 dark:text-slate-500 text-xl">Loading contact information...</h1>
-            </div>
-        </x-slot:placeholder>
-
         <div class="flex flex-col lg:flex-row w-full items-start justify-center mb-5">
             <!-- Contact Information  -->
             <div class="w-full mb-24 lg:mb-0">

@@ -65,43 +65,16 @@ Route::middleware([
 
 });
 
+// for guest
+Route::get('/me', [UserController::class, 'me'])->name('user.me');
+Route::get('/works', [UserController::class, 'work'])->name('user.works');
+Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
+// project
+Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
+// download the cvfile
+Route::get('/download', [UserController::class, 'download'])->name('download.cv');
+// mail send
+Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::middleware(['splade'])->group(function () {
-    // for guest
-    Route::get('/me', [UserController::class, 'me'])->name('user.me');
-    Route::get('/works', [UserController::class, 'work'])->name('user.works');
-    Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
-    // project
-    Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
-    // download the cvfile
-    Route::get('/download', [UserController::class, 'download'])->name('download.cv');
-    // mail send
-    Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
-
-    // check user
-    Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
-
-    // Registers routes to support the interactive components...
-    // Route::spladeWithVueBridge();
-
-    // Registers routes to support password confirmation in Form and Link components...
-    // Route::spladePasswordConfirmation();
-
-    // Registers routes to support Table Bulk Actions and Exports...
-    // Route::spladeTable();
-
-    // Registers routes to support async File Uploads with Filepond...
-    // Route::spladeUploads();
-});
+// check user
+Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
