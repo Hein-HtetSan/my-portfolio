@@ -10,7 +10,7 @@
         <div class="col-span-3 md:col-span-1">
             <div class="flex items-center justify-center ml-0 md:ml-24">
                 <img src="{{ asset('image/profile.jpg') }}" class="object-fill rounded-full
-                shadow-lg border-4 border-zinc-100 w-60 h-60 md:w-72 md:h-72"
+                shadow-lg border-4 border-zinc-100 w-48 h-48 md:w-72 md:h-72"
                     alt="">
             </div>
         </div>
@@ -55,18 +55,21 @@
     </section>
     <!-- End of Dashboard Section  -->
 
+    {{-- divider  --}}
+    <div class="my-20 md:my-0"></div>
+
 
     <!-- About Section  -->
     <section id="about"
-        class="flex flex-col mt-12 md:mt-0 justify-center aligns-center px-10 lg:px-64 w-full h-auto space-x-5 mb-20">
+        class="flex flex-col mt-12 md:mt-0 justify-center aligns-center px-5 lg:px-64 w-full h-auto mb-20">
 
         <h1 class="uppercase text-3xl mb-10 font-rubik font-medium text-zinc-600 text-center  dark:text-zinc-300">
             Who Am I? 🙂
         </h1>
 
-        <div class="flex flex-col lg:flex-row items-center justify-center">
+        <div class="flex flex-col md:flex-row items-center justify-center">
             <!-- Content  -->
-            <div class="content lg:px-10  dark:text-slate-400">
+            <div class="content md:px-10  dark:text-slate-400">
                 <p class="indent-10 font-rubik text-gray-800 text-justify mb-2 dark:text-slate-400">
                     Hello, I'm a passionate Software Engineering student currently in my 4th semester at the University of
                     Computer
@@ -99,16 +102,16 @@
 
     {{-- language logo  --}}
     <div class="w-full mb-24 md:mb-20">
-        <div class=" flex items-center justify-center gap-5 text-center">
-            <i class="bx bxl-html5 text-orange-600 dark:text-orange-400 text-3xl bg-orange-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-css3 text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-java text-red-600 dark:text-red-400 text-3xl bg-red-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-python text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-php text-indigo-600 dark:text-indigo-400 text-3xl bg-indigo-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-c-plus-plus text-purple-600 dark:text-purple-400 text-3xl bg-purple-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-javascript text-yellow-600 dark:text-yellow-400 text-3xl bg-yellow-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-bootstrap text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="bx bxl-tailwind-css text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+        <div class="text-center">
+            <i class="mx-1 bx bxl-html5 text-orange-600 dark:text-orange-400 text-3xl bg-orange-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-css3 text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-java text-red-600 dark:text-red-400 text-3xl bg-red-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-python text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-php text-indigo-600 dark:text-indigo-400 text-3xl bg-indigo-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-c-plus-plus text-purple-600 dark:text-purple-400 text-3xl bg-purple-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-javascript text-yellow-600 dark:text-yellow-400 text-3xl bg-yellow-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-bootstrap text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i class="mx-1 bx bxl-tailwind-css text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
         </div>
     </div>
 

@@ -11,6 +11,10 @@ Route::get('/', function () {
     return redirect()->route('user.me');
 });
 
+Route::get('/info', function() {
+    phpinfo();
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
