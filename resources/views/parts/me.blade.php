@@ -37,9 +37,15 @@
             <!-- Buttons  -->
             <div class="flex flex-col sm:flex-row items-center justify-center">
                 <!-- Download cv  -->
-                <a href="{{ route('download.cv') }}"
-                    class="text-sm flex items-center bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200  border-slate-500 hover:bg-sky-500 shadow-lg">
-                    <i class="bx bx-file me-1 text-lg"></i> <span class="md:mt-1">Download CV</span>
+                <a href="{{ $user->cv_form != null ? route('download.cv') : '' }}"
+                    @if ($user->cv_form == null)
+                        style="pointer-events: none; cursor: not-allowed;" alt="No file found!"
+                    @endif
+                    class="text-sm flex items-center {{ $user->cv_form == null ? 'bg-red-500' : 'bg-sky-700' }} rounded-full px-5 py-2
+                    uppercase font-rubik text-gray-200  border-slate-500 hover:bg-sky-500 shadow-lg">
+                    <i class="bx bx-file me-1 text-lg"></i> <span class="md:mt-1">
+                        {{ $user->cv_form == null ? 'Sorry, Not uploaded!' : 'Download CV' }}
+                    </span>
                 </a>
 
                 <div class="mx-1 my-2"></div>

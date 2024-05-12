@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Home')
 
 @section('content')
 
@@ -54,10 +55,10 @@
                 {{-- cv uploader  --}}
                 {{-- cv file uploder  --}}
                 @if (Auth::user()->cv_form == null)
-                    <button class="px-5 py-2 rounded-lg text-slate-100 bg-sky-500 hover:bg-sky-400 my-3 text-sm font-semibold shadow">
+                    <a href="{{ route('profile.cv') }}" class="px-5 py-2 rounded-lg text-slate-100 bg-sky-500 hover:bg-sky-400 my-3 text-sm font-semibold shadow">
                         Insert CV form
-                    </button>
-                    <small class="bg-yellow-100 rounded-xl p-2 text-yellow-600">Recommended</small>
+                    </a>
+                    <small class="bg-yellow-100 rounded-xl p-2 text-yellow-600 ms-1 text-xs">Recommended</small>
                 @else
                     {{-- cv file  --}}
                     <div class="file-container flex flex-col bg-white rounded-lg border px-5 py-2 dark:bg-gray-800 shadow-xl
@@ -68,8 +69,10 @@
                                 <i class="far fa-file text-2xl"></i>
                             </div>
                             <div class="file-info flex-1 ml-4">
-                                <div class="file-name text-slate-600 dark:text-slate-400">cvform.png</div>
-                                <div class="file-size text-sm text-gray-500">File Size: 2.5 MB</div>
+                                <div class="file-name text-slate-600 dark:text-slate-400">{{ Auth::user()->cv_form }}</div>
+                                <div class="file-size text-sm text-gray-500">
+                                    {{ round(abs($fileSizeInMB), 2) }} MB
+                                </div>
                             </div>
                             <div
                                 class="eye-icon flex-shrink-0 cursor-pointer w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg hover:bg-gray-200">
@@ -77,14 +80,14 @@
                             </div>
                         </div>
                         <div class="mt-5 flex items-center justify-end">
-                            <button
+                            <a href="" download="{{ storage_path('app/public/' . Auth::user()->cv_form) }}"
                                 class="px-3 py-1 text-sky-600 rounded-lg bg-sky-100 dark:bg-opacity-90 text-sm hover:bg-sky-200 hover:text-sky-600 focus:outline-none focus:ring focus:ring-sky-300">
                                 <i class="fas fa-download mr-1"></i> Download
-                            </button>
-                            <button
+                            </a>
+                            <a href="{{ route('profile.cv.destroy', Auth::user()->id) }}"
                                 class="px-3 py-1 text-red-600 rounded-lg bg-red-100 text-sm hover:bg-red-200 hover:text-red-600 focus:outline-none focus:ring focus:ring-red-300 ml-2">
                                 <i class="fas fa-trash mr-1"></i> Delete
-                            </button>
+                            </a>
                         </div>
                     </div>
                 @endif

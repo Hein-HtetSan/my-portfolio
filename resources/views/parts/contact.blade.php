@@ -35,12 +35,6 @@
                 <div class="flex flex-row items-center justify-start">
                     <a href=""
                         class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
-                            class="bx text-4xl text-zinc-600 dark:text-cyan-400 bxl-facebook"></i></a>
-                    <a href=""
-                        class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
-                            class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-messenger"></i></a>
-                    <a href=""
-                        class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                             class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-twitter"></i></a>
                     <a href=""
                         class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
@@ -89,7 +83,7 @@
                     <!-- Buttons  -->
                     <!-- send button  -->
                     <button id="sendButton"
-                        class="text-sm flex items-center md:items-start bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
+                        class="text-sm flex items-center bg-sky-700 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 dark:bg-sky-900 dark:hover:bg-sky-700  dark:border-2 border-slate-500 hover:bg-sky-500 shadow-lg">
                         <span class="">Send</span> <i class="bx bx-send ml-1 text-lg"></i>
                     </button>
                 </form>
@@ -98,42 +92,5 @@
         </div>
         {{-- </x-splade-lazy> --}}
     </section>
-
-<script>
-    console.log('runing')
-    document.getElementById('sendButton').addEventListener('click', function() {
-    var button = this;
-    var buttonText = button.querySelector('span');
-    var icon = button.querySelector('i');
-
-    console.log('clicked')
-
-    // Disable button to prevent multiple clicks
-    button.disabled = true;
-
-    // Change button text to "Sending..."
-    buttonText.textContent = 'Sending...';
-
-    // Remove existing icon and replace with a spinning icon
-    icon.classList.remove('bx-send');
-    icon.classList.add('bx bx-loader bx-spin');
-
-    // Perform the sending operation (e.g., AJAX request)
-    // Once the operation is complete, re-enable the button and restore the original content
-    setTimeout(function() {
-        // Simulate sending operation completion
-        // Remove spinner and restore original icon
-        icon.classList.remove('bx-loader', 'bx-spin');
-        icon.classList.add('bx-send');
-
-        // Restore original button text
-        buttonText.textContent = 'Send';
-
-        // Re-enable the button
-        button.disabled = false;
-    }, 2000); // Replace 2000 with the duration of your sending operation in milliseconds
-});
-</script>
-
 
 @endsection

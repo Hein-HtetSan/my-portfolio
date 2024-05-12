@@ -67,8 +67,8 @@
       {{-- name  --}}
       <a href="#" class="flex">
         <span
-          class="self-center text-lg font-medium font-rubik whitespace-nowrap text-gray-500 subpixel-antialiased">
-           <span class="text-slate-300 mt-10 font-regular text-xs">$ ~/portfolio/heinhtetsan/@yield('title')  </span>
+          class="self-center text-lg font-medium font-rubik whitespace-nowrap subpixel-antialiased">
+           <span class="text-slate-600 dark:text-slate-300 mt-10 font-regular text-xs">$ ~/portfolio/heinhtetsan/@yield('title')  </span>
         </span>
       </a>
       {{-- end of name  --}}

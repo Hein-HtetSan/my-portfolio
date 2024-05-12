@@ -61,8 +61,12 @@ Route::middleware([
     Route::get('/admin/profile/contact', [AdminController::class, 'contact_page'])->name('profile.contact'); // contact page edit
     Route::post('/admin/profile/contact/save', [AdminController::class, 'contact_save'])->name('profile.contact.save'); // save contact edit
 
-    Route::get('/admin/profile/github', [AdminController::class, 'github_page'])->name('profile.github');
-    Route::post('/admin/profile/github/save', [AdminController::class, 'github_save'])->name('profile.github.save');
+    Route::get('/admin/profile/github', [AdminController::class, 'github_page'])->name('profile.github');  // github page edit
+    Route::post('/admin/profile/github/save', [AdminController::class, 'github_save'])->name('profile.github.save'); // github account store
+
+    Route::get('/admin/profile/cv', [AdminController::class, 'cv_form'])->name('profile.cv'); // cv form
+    Route::post('/admin/profile/cv/save', [AdminController::class, 'cv_save'])->name('profile.cv.save'); // save the cv form
+    Route::get('/admin/profile/cv/destroy/{id}', [AdminController::class, 'cv_destroy'])->name('profile.cv.destroy'); // remove cv form
 
     // blog section
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('blog.list');

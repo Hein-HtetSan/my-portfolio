@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Project;
 use App\Mail\Subscriber;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class UserController extends Controller
     // me page
     public function me()
     {
-        return view('parts.me');
+        $user = User::first();
+        return view('parts.me', compact('user'));
     }
 
     // work page
@@ -47,8 +49,12 @@ class UserController extends Controller
     // download cv
     public function download()
     {
-        $filePath = storage_path('app/public/cv.pdf');
-        return response()->download($filePath);
+        $user = User::first();
+        $filePath = storage_path('app/public/' . $user->cv_form);
+        if($user->cv_form != null){
+            return response()->download($filePath);
+        }
+        return back()->with(['error' => 'No file found']);
     }
 
     // send mail

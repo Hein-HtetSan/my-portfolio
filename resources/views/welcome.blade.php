@@ -6,13 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hein Htet San | @yield('title')</title>
-
     {{-- icon  --}}
-    <link rel="icon" href="">
+    <link rel="icon" href="{{ asset('image/tab-icon.svg') }}">
     <!-- Bxicons  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,15 +78,10 @@
             <!-- Your form content -->
             <form class="mb-3" method="POST" action="{{ route('user.check') }}">
                 @csrf
-                <input type="text" class="w-full border-r-4 border-slate-300 border-1 font-rubik text-slate-700
-                rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route">
+                <input type="text" class="w-full border-r-4 border-slate-300 border-1 font-rubik text-slate-700 p-3
+                rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route"
+                placeholder="example cd me">
             </form>
-            <small class="block text-sm text-slate-600 dark:text-green-500 mb-2 rounded font-rubik mb-3">
-                $ <b class="">cd /admin</b> or <b>admin</b> to login as admin <br>
-                $ <b class="">cd /me</b> or <b>me</b> to go home page <br>
-                $ <b class="">cd /workshops</b> or <b>workshops</b> to go project page <br>
-                $ <b class="">cd /contact</b> or <b>contact</b> to go contact page
-            </small>
             <small class="block text-sm text-red-600 dark:text-yellow-200 font-rubik">
                 <b class="">Ctrl+B:</b> to open terminal <br>
                 <b class="">Ctrl+X:</b> to exit

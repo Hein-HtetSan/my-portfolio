@@ -7,6 +7,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\Mail as UserMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -14,7 +15,15 @@ class AdminController extends Controller
     // dashboard page
     public function dashboard()
     {
-        return view('backend.home');
+        $fileSizeInKB = null;
+        $fileSizeInMB = null;
+        // Check if cv_form is not null
+        if (Auth::user()->cv_form && Storage::disk('public')->exists(Auth::user()->cv_form)) {
+            $fileSizeInBytes = Storage::disk('public')->size(Auth::user()->cv_form);
+            $fileSizeInKB = $fileSizeInBytes / 1024;
+            $fileSizeInMB = $fileSizeInKB / 1024;
+        }
+        return view('backend.home', compact('fileSizeInKB', 'fileSizeInMB'));
     }
 
     // project page
@@ -66,6 +75,44 @@ class AdminController extends Controller
         }
     }
 
+    // remove cv file
+    public function cv_destroy($id)
+    {
+        $user = User::where('id', $id)->first();
+        $filename = $user->cv_form;
+        Storage::delete('app/public/' . $filename);  // remove from storage
+        $user->cv_form = null;
+        $user->save(); // update the database
+        return back()->with(['success' => 'Remove file success']);
+    }
+
+    // cv form page
+    public function cv_form()
+    {
+        if(Auth::user()){
+            $cv = Auth::user();
+            return view('backend.home.edit', compact('cv'));
+        }else{
+            return redirect()->route('login');
+        }
+    }
+
+    // save cv form
+    public function cv_save(Request $request)
+    {
+        Validator::make($request->all(), ['cv_form' => 'required|file|mimes:png,jpeg,pdf,jpg']);
+        $admin = User::where('id', Auth::user()->id)->first();
+        $file = $request->cv_form;
+        // save the file
+        if ($file->isValid()) {
+            $filename = uniqid() . $file->getClientOriginalName(); // rename file with unique id
+            $file->storeAs('public', $filename);  // store the file to storage
+        }
+        $data = ['cv_form' => $filename];
+        $admin->update($data);
+        return redirect()->route('dashboard')->with(['success' => 'Saved CV Form']);
+    }
+
     // save intro message
     public function intro_save(Request $request)
     {
@@ -107,4 +154,5 @@ class AdminController extends Controller
         $admin->update($data);
         return redirect()->route('dashboard')->with(['success'=> 'Github updated successfully']);
     }
+
 }

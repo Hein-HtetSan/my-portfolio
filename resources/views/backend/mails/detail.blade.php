@@ -68,7 +68,13 @@
             <div class="flex items-center">
                 <div class="w-10 h-10 rounded-full bg-gray-400"></div>
                 <div class="ml-3">
-                    <p class="text-gray-900 dark:text-gray-200 text-sm font-semibold">Subscriber</p>
+                    <p class="text-gray-900 dark:text-gray-200 text-sm font-semibold">
+                        @if ($mail->status == 2)
+                            Admin
+                        @else
+                            Subscriber
+                        @endif
+                    </p>
                     <p class="text-gray-600 dark:text-gray-400 text-xs">{{ $mail->sender_mail }}</p>
                 </div>
             </div>
@@ -90,10 +96,13 @@
                 <i class="bx bx-send"></i> Send
             </button>
         </form>
+
         <div class="px-6 py-4">
+            @if ($mail->status != 2)
             <button id="replyBtn" class="bg-slate-500 hover:bg-slate-700 text-white py-2 px-4 rounded">
-               Reply
-            </button>
+                Reply
+             </button>
+            @endif
             <a href="{{ route('mail.destroy', $mail->id) }}" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded ml-2">
                 <i class="bx bx-trash"></i> Delete Permanently
             </a>

@@ -60,6 +60,9 @@
 @elseif (request()->routeIs('profile.github'))
     {{-- github edit page  --}}
     @include('backend.home.components.git')
+@elseif (request()->routeIs('profile.cv'))
+    {{-- cv insert page  --}}
+    @include('backend.home.components.file')
 @endif
 
 {{-- end of editing components  --}}

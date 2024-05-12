@@ -48,7 +48,7 @@
     <div class="mb-5"></div>
 
     {{-- github --}}
-    <span class="text-bold text-sky-600 text-md block ">Link <a href="{{ route('profile.contact') }}"><i class="bx bx-pencil"></i></a> </span>
+    <span class="text-bold text-sky-600 text-md block ">Link <a href="{{ route('profile.github') }}"><i class="bx bx-pencil"></i></a> </span>
     @if (Auth::user()->github)
     <div class="mt-2 flex items-center justify-start">
         <a href="{{ Auth::user()->github }}" class="px-3 py-1 rounded-lg bg-slate-200 flex items-center gap-2 font-rubik hover:bg-slate-400">
