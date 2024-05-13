@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,6 +30,12 @@ return [
     */
 
     'connections' => [
+
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('DB_URL', 'mongodb+srv://heinhtetsan:ykpt22270@heinhtetsan.e7hfpjd.mongodb.net/?retryWrites=true&w=majority&appName=heinhtetsan'),
+            'database' => env("DB_DATABASE", 'heinhtetsan')
+        ],
 
         'sqlite' => [
             'driver' => 'sqlite',
