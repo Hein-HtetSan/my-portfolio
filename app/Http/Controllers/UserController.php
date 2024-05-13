@@ -18,8 +18,8 @@ class UserController extends Controller
     // me page
     public function me()
     {
-        // $user = User::first();
-        return view('parts.me');
+        $user = User::first();
+        return view('parts.me', compact('user'));
     }
 
     // work page

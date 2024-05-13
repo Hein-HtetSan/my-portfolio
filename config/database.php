@@ -33,8 +33,20 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('DB_URL', 'mongodb+srv://heinhtetsan:ykpt22270@heinhtetsan.e7hfpjd.mongodb.net/heinhtetsan?retryWrites=true&w=majority'),
-            'database' => env("DB_DATABASE", 'heinhtetsan')
+            'host' => [
+                'ac-vyhuobs-shard-00-01.e7hfpjd.mongodb.net',
+                'ac-vyhuobs-shard-00-02.e7hfpjd.mongodb.net',
+                'ac-vyhuobs-shard-00-03.e7hfpjd.mongodb.net',
+            ],
+            'port' => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE', 'heinhtetsan'),
+            'username' => env('DB_USERNAME', 'heinhtetsan'),
+            'password' => env('DB_PASSWORD', 'ykpt22270'),
+            'options' => [
+                'database' => 'admin', // Default database for authentication
+                'ssl' => true,
+                'sslCAFile' => 'lets-encrypt-r3.pem',
+            ],
         ],
 
         'sqlite' => [
