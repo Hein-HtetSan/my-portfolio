@@ -4,12 +4,15 @@ namespace App\Models;
 
 use App\Models\Cover;
 use App\Models\Language;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Mongodb\Laravel\Eloquent\Model;
+
 
 class Project extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    protected $connection = 'mongodb';
 
     protected $fillable = [
         'id',

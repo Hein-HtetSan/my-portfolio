@@ -33,7 +33,7 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('DB_URL', 'mongodb+srv://heinhtetsan:ykpt22270@heinhtetsan.e7hfpjd.mongodb.net/?retryWrites=true&w=majority&appName=heinhtetsan'),
+            'dsn' => env('DB_URL', 'mongodb+srv://heinhtetsan:ykpt22270@heinhtetsan.e7hfpjd.mongodb.net/heinhtetsan?retryWrites=true&w=majority'),
             'database' => env("DB_DATABASE", 'heinhtetsan')
         ],
 
