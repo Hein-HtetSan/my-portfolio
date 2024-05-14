@@ -21,7 +21,7 @@
 
         "MAIL_MAILER":"smtp",
         "MAIL_HOST":"smtp.gmail.com",
-        "MAIL_PORT":587,
+        "MAIL_PORT":"587",
         "MAIL_USERNAME":"heinhtetsan33455@gmail.com",
         "MAIL_PASSWORD":"svxn gpqd qcbq xauz",
         "MAIL_ENCRYPTION":"tls",
