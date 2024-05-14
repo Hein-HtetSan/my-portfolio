@@ -13,7 +13,7 @@
         "APP_DEBUG": "true",
         "APP_URL": "https://heinhtetsan.vercel.app",
         "APP_KEY": "base64:UBKahPyIhKpwsnt6iPi2J22TD+oGJ9z7cqT7d+l3c3Y=",
-        "DB_DSN": "mongodb+srv://admin:P@ssw0rd!@portfolio.vg7pxli.mongodb.net/?retryWrites=true&w=majority&appName=portfolio",
+        "DB_DSN": "mongodb+srv://admin:ezD0wsKi9vybYszB@portfolio.vg7pxli.mongodb.net/?retryWrites=true&w=majority&appName=portfolio",
         "DB_DATABASE": "portfolio",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",

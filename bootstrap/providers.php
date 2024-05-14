@@ -5,5 +5,5 @@ return [
     App\Providers\FortifyServiceProvider::class,
     App\Providers\JetstreamServiceProvider::class,
     GrahamCampbell\Markdown\MarkdownServiceProvider::class,
-    // Mongodb\Laravel\MongoDBServiceProvider::class,
+    Mongodb\Laravel\MongoDBServiceProvider::class,
 ];
