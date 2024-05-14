@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hein Htet San | @yield('title')</title>
     {{-- icon  --}}
-    <link rel="icon" href="../../../public/image/tab-icon.svg">
+    <link rel="icon" href="{{ asset('image/tab-icon.svg') }}">
     <!-- Bxicons  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

@@ -11,10 +11,10 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://heinhtetsan.tech",
+        "APP_URL": "https://www.heinhtetsan.tech",
 
         "APP_KEY": "base64:UBKahPyIhKpwsnt6iPi2J22TD+oGJ9z7cqT7d+l3c3Y=",
-        "ASSET_URL": "https://heinhtetsan.tech/public",
+        "ASSET_URL": "https://www.heinhtetsan.tech/public",
 
         "DB_DSN": "mongodb+srv://admin:ezD0wsKi9vybYszB@portfolio.vg7pxli.mongodb.net/?retryWrites=true&w=majority&appName=portfolio",
         "DB_DATABASE": "portfolio",
