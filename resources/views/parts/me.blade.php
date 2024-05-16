@@ -4,8 +4,6 @@
 
 @section('content')
 
-
-
     <!-- Dashboard Section  -->
     <section id="home" class="grid grid-cols-3 h-dvh items-center my-6 md:my-0">
 
