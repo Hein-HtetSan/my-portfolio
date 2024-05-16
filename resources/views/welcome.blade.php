@@ -78,7 +78,6 @@
             <!-- Your form content -->
             <form class="mb-3" method="POST" action="{{ route('user.check') }}">
                 @csrf
-                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <input type="text" class="w-full border-r-4 border-slate-300 border-1 font-rubik text-slate-700 p-3
                 rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route"
                 placeholder="example cd me">
