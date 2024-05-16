@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        if($this->app->environment('production')) {
+            Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         Blade::directive('markdown', function ($expression) {
             return "<?php echo (new Parsedown())->text($expression); ?>";
         });
