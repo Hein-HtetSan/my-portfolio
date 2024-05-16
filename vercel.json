@@ -20,6 +20,7 @@
         "DB_DATABASE": "portfolio",
 
         "CACHE_STORE": "mongodb",
+        "SESSION_HTTP_ONLY": "false",
 
         "MAIL_MAILER":"smtp",
         "MAIL_HOST":"smtp.gmail.com",
