@@ -1,6 +1,6 @@
 {
     "version": 2,
-      "framework": null,
+    "framework": null,
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
@@ -27,17 +27,15 @@
         "DB_DATABASE": "portfolio",
 
         "CACHE_STORE": "mongodb",
-        "SESSION_HTTP_ONLY": "false",
 
-        "MAIL_MAILER":"smtp",
-        "MAIL_HOST":"smtp.gmail.com",
-        "MAIL_PORT":"587",
-        "MAIL_USERNAME":"heinhtetsan33455@gmail.com",
-        "MAIL_PASSWORD":"svxn gpqd qcbq xauz",
-        "MAIL_ENCRYPTION":"tls",
-        "MAIL_FROM_ADDRESS":"heinhtetsan@portfolio.me",
-        "MAIL_FROM_NAME":"Portfolio",
-
+        "MAIL_MAILER": "smtp",
+        "MAIL_HOST": "smtp.gmail.com",
+        "MAIL_PORT": "587",
+        "MAIL_USERNAME": "heinhtetsan33455@gmail.com",
+        "MAIL_PASSWORD": "svxn gpqd qcbq xauz",
+        "MAIL_ENCRYPTION": "tls",
+        "MAIL_FROM_ADDRESS": "heinhtetsan@portfolio.me",
+        "MAIL_FROM_NAME": "Portfolio",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
