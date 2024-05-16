@@ -112,7 +112,7 @@ class UserController extends Controller
     // check useer
     public function check(Request $request)
     {
-        // dd($request->toArray());
+        dd($request->toArray());
         $route = $request->route;
         switch ($route) {
             case 'cd /admin':

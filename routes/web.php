@@ -6,19 +6,19 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Log;
+
+
+use App\Models\Language;
 
 Route::get('/', function () {
     return redirect()->route('user.me');
 });
 
-Route::get('/info', function() {
-    phpinfo();
-});
 
 Route::middleware([
     'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
 ])->group(function () {
 
     // admin section
@@ -83,6 +83,13 @@ Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('pro
 Route::get('/download', [UserController::class, 'download'])->name('download.cv');
 // mail send
 Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
-
 // check user
 Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
+
+
+// login
+Route::post('/user/login', [AuthController::class, 'login'])->name('user.login');
+
+
+
+

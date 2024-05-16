@@ -101,10 +101,9 @@ if ($currentTime < 12) {
             </div>
         @endsession
 
-        <form id="signUpForm" action="{{ route('login') }}" class="p-10 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 mt-10
+        <form id="signUpForm" action="{{ route('user.login') }}" class="p-10 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 mt-10
         border-gray-100 mb-8" method="POST">
-        @csrf
-
+            @csrf
             <h1 class="text-xl text-center mb-2 font-semibold text-sky-700 capitalize font-rubik">
                 Hello Sir, <?= $greeting ?>
             </h1>

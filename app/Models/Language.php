@@ -8,8 +8,9 @@ use Mongodb\Laravel\Eloquent\Model;
 
 class Language extends Model
 {
-    // use HasFactory; 
+    // use HasFactory;
     protected $connection = 'mongodb';
+    protected $collection = 'languages';
 
     protected $fillable = [
         'name'

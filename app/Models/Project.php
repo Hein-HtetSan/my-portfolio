@@ -13,6 +13,7 @@ class Project extends Model
 {
     // use HasFactory;
     protected $connection = 'mongodb';
+    protected $collection = 'project';
 
     protected $fillable = [
         'id',

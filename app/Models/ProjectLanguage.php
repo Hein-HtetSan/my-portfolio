@@ -10,6 +10,7 @@ class ProjectLanguage extends Model
 {
     // use HasFactory;
     protected $connection = 'mongodb';
+    protected $collection = 'project_languages';
 
     protected $fillable = [
         'project_id',

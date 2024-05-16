@@ -10,6 +10,7 @@ class Cover extends Model
 {
     // use HasFactory;
     protected $connection = 'mongodb';
+    protected $collection = 'covers';
 
     protected $fillable = [
         'name',

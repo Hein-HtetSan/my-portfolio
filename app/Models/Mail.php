@@ -11,6 +11,7 @@ class Mail extends Model
 {
     // use HasFactory;
     protected $connection = 'mongodb';
+    protected $collection = 'mails';
 
     protected $fillable = [
         'sender_mail',

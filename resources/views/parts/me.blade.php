@@ -3,6 +3,9 @@
 @section('title', 'me')
 
 @section('content')
+
+
+
     <!-- Dashboard Section  -->
     <section id="home" class="grid grid-cols-3 h-dvh items-center my-6 md:my-0">
 
@@ -19,7 +22,7 @@
 
             <!-- Name -->
             <h3 class="uppercase font-medium font-rubik text-3xl mb-5 md:mb-5 text-gray-700 dark:text-zinc-300">I'm
-                <span class="text-sky-600 dark:text-sky-400">Hein Htet San 👋</span>
+                <span class="text-sky-600 dark:text-sky-400">{{ $user->name }} 👋</span>
             </h3>
 
             <!-- What I do  -->
