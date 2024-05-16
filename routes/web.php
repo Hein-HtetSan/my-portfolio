@@ -73,18 +73,21 @@ Route::middleware([
 
 });
 
-// for guest
-Route::get('/me', [UserController::class, 'me'])->name('user.me');
-Route::get('/works', [UserController::class, 'work'])->name('user.works');
-Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
-// project
-Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
-// download the cvfile
-Route::get('/download', [UserController::class, 'download'])->name('download.cv');
-// mail send
-Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
-// check user
-Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
+Route::group(['scheme' => 'https'], function() {
+    // for guest
+    Route::get('/me', [UserController::class, 'me'])->name('user.me');
+    Route::get('/works', [UserController::class, 'work'])->name('user.works');
+    Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
+    // project
+    Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
+    // download the cvfile
+    Route::get('/download', [UserController::class, 'download'])->name('download.cv');
+    // mail send
+    Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
+    // check user
+    Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
+});
+
 
 
 // login
