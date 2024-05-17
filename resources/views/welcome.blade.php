@@ -18,7 +18,7 @@
 
     <!-- text animated  -->
     {{-- <script src="./js/text-animate.js"></script> --}}
-    <script src="{{ mix('js/direct.js') }}"></script>
+    @vite('resources/js/direct.js')
 
     <script src="https://cdn.tailwindcss.com"></script>
 

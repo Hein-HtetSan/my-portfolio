@@ -103,7 +103,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 {{-- Image picker plusgin  --}}
-<script src="{{ asset('js/Multiple-Image-Picker-jQuery-Spartan/dist/js/spartan-multi-image-picker-min.js') }}"></script>
+@vite('js/Multiple-Image-Picker-jQuery-Spartan/dist/js/spartan-multi-image-picker-min.js')
 <script>
     // Initialize Summernote
     $(document).ready(function() {
