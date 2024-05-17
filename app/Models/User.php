@@ -42,6 +42,7 @@ class User extends Eloquent
         'phone',
         'address',
         'git_api',
+        'profile_photo',
     ];
 
     /**

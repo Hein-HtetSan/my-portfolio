@@ -10,7 +10,7 @@
         <!-- Image  -->
         <div class="col-span-3 md:col-span-1">
             <div class="flex items-center justify-center ml-0 md:ml-24">
-                <img src="{{ asset('image/profile.jpg') }}" class="object-fill rounded-full
+                <img src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}" class="object-fill rounded-full
                 shadow-lg border-4 border-zinc-100 w-48 h-48 md:w-72 md:h-72"
                     alt="">
             </div>

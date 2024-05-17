@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('age');
             $table->string('date_of_birth')->default('26-04-2004');
+            $table->binary('profile_photo')->nullable(true);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

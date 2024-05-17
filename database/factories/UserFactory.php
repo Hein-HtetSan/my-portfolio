@@ -26,11 +26,16 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+
+        $imagePath = public_path('image/profile.jpg'); // Adjust the image path
+        $base64Data = file_get_contents($imagePath);
+
         return [
             'name' => 'Hein Htet San',
             'email' => 'heinhtetsan33455@gmail.com',
             'email_verified_at' => now(),
             'age' => 20,
+            'profile_photo' => new \MongoDB\BSON\Binary($base64Data, \MongoDB\BSON\Binary::TYPE_GENERIC),
             'password' => static::$password ??= Hash::make('ykpt22270'),
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
