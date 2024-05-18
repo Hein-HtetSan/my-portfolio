@@ -11,7 +11,11 @@ class MailController extends Controller
     // get the all mail
     public function get()
     {
-        $data = Mail::get();
-        return response()->json($data, 200);
+        try{
+            $data = Mail::get();
+            return response()->json(['success' => true, 'data' => $data], 200);
+        }catch(\Exception $e){
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
     }
 }

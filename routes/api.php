@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ProjectController;
 use App\Http\Controllers\API\MailController;
+use App\Http\Controllers\API\LangaugeController;
+
 
 
 Route::get('/user', function (Request $request) {
@@ -18,3 +20,4 @@ Route::post('auth/login', [AuthController::class, 'login']);
 Route::get('get/projects', [ProjectController::class, 'get']);
 Route::get('get/mails', [MailController::class, 'get']);
 Route::get('get/users', [AuthController::class, 'get_users']);
+Route::get('get/langs', [LangaugeController::class, 'get']);
