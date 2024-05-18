@@ -6,6 +6,6 @@ return [
     App\Providers\JetstreamServiceProvider::class,
     GrahamCampbell\Markdown\MarkdownServiceProvider::class,
     Mongodb\Laravel\MongoDBServiceProvider::class,
-    // MongoDB\Laravel\Auth\PasswordResetServiceProvider::class,
-    // MongoDB\Laravel\MongoDBQueueServiceProvider::class,
+    MongoDB\Laravel\Auth\PasswordResetServiceProvider::class,
+    MongoDB\Laravel\MongoDBQueueServiceProvider::class,
 ];
