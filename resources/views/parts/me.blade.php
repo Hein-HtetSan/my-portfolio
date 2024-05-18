@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- Dashboard Section  -->
-    <section id="home" class="grid grid-cols-3 h-dvh items-center my-6 md:my-0">
+    <section id="home" class="grid grid-cols-3 space-y-5 h-dvh items-center my-6 md:my-0">
 
         <!-- Image  -->
         <div class="col-span-3 md:col-span-1">
