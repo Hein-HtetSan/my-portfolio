@@ -8,8 +8,7 @@ use App\Models\Project;
 
 class ProjectController extends Controller
 {
-    //
-
+    // get all project
     public function get()
     {
         try{

@@ -8,8 +8,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Log;
-
-
 use App\Models\Language;
 
 Route::get('/', function () {
@@ -74,22 +72,13 @@ Route::middleware([
 });
 
     // for guest
-Route::get('/me', [UserController::class, 'me'])->name('user.me');
-Route::get('/works', [UserController::class, 'work'])->name('user.works');
-Route::get('/contact', [UserController::class, 'contact'])->name('user.contact');
-// project
-Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail');
-// download the cvfile
-Route::get('/download', [UserController::class, 'download'])->name('download.cv');
-// mail send
-Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send');
-// check user
-Route::post('/user/check', [UserController::class, 'check'])->name('user.check');
-
-
-
-// login
-Route::post('/user/login', [AuthController::class, 'login'])->name('user.login');
+Route::get('/me', [UserController::class, 'me'])->name('user.me'); // home page
+Route::get('/works', [UserController::class, 'work'])->name('user.works'); // workshop page
+Route::get('/contact', [UserController::class, 'contact'])->name('user.contact'); // contacvt page/
+Route::get('/project/detail/{id}', [UserController::class, 'detail'])->name('project.detail'); // project
+Route::get('/download', [UserController::class, 'download'])->name('download.cv'); // download the cvfile
+Route::post('/mail/send', [UserController::class, 'sendMail'])->name('mail.send'); // mail send
+Route::post('/user/check', [UserController::class, 'check'])->name('user.check'); // check user
 
 
 

@@ -22,6 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\AddCorsHeaders::class,
+            \Bepsvpt\SecureHeaders\SecureHeadersMiddleware::class,
+            \App\Http\Middleware\SecureHeaders::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
