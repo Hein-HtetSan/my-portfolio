@@ -10,9 +10,8 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use MongoDB\Laravel\Auth\User as Authenticatable; // Use the MongoDB Authenticatable model
 use MongoDB\Laravel\Eloquent\Model as Eloquent;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;

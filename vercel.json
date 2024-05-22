@@ -17,7 +17,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://heinhtetsan.tech",
 
         "APP_KEY": "base64:UBKahPyIhKpwsnt6iPi2J22TD+oGJ9z7cqT7d+l3c3Y=",
