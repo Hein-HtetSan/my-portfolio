@@ -12,35 +12,18 @@ use App\Models\User;
 class AuthController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth:api', ['except' => ['login']]);
-    }
-
     // login
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-
-        return $this->respondWithToken($token);
+        return response()->json(['message' => 'success']);
     }
 
-    public function logout() // logout
-    {
-        auth()->logout();
-
-        return response()->json(['message' => 'Successfully logged out']);
-    }
 
     // refresh token
-    public function refresh()
-    {
-        return $this->respondWithToken(auth()->refresh());
-    }
 
     // get all users
     public function get_users()
@@ -54,8 +37,7 @@ class AuthController extends Controller
     }
 
     // reponsd with token
-    protected function respondWithToken($token)
-    {
+    public function responseWithToken(){
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
@@ -63,9 +45,4 @@ class AuthController extends Controller
         ]);
     }
 
-    // infor
-    public function me()
-    {
-        return response()->json(auth()->user());
-    }
 }

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->longText('name');
             $table->unsignedBigInteger('project_id');
+            $table->string('url');
+            $table->string('public_id');
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
 

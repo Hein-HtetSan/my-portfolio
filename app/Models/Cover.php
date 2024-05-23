@@ -15,5 +15,7 @@ class Cover extends Model
     protected $fillable = [
         'name',
         'project_id',
+        'url',
+        'public_id'
     ];
 }

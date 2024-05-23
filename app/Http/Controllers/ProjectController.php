@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ProjectController extends Controller
 {
@@ -94,14 +95,11 @@ class ProjectController extends Controller
         return redirect()->route('project.list')->with('success', 'Project deleted successfully!');
     }
 
-
     // get by id
     public function get($id)
     {
         $project = Project::with('covers', 'languages')->find($id);
         $currentUrl = urlencode(URL::current());
-        // $content = Markdown::convertToHtml($project->content);
-        // dd($content, $project->content);
         return view('backend.project.detail', compact('project', 'currentUrl'));
     }
 
