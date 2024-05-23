@@ -46,7 +46,7 @@ class ProjectController extends Controller
             // ProjectLanguage::create($p_l_data); // store to the database
             if ($request->hasFile('image')) {
                 $files = $request->file('image');
-                foreach ($files as $file) {
+                for(int $i = 0; $i < count($files); $i++) {
                     if ($file->isValid()) {
                         $cloudinaryImage = $file->storeOnCloudinary('projects');
                         $url = $cloudinaryImage->getSecurePath();
