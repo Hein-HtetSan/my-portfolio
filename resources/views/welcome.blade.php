@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <!-- text animated  -->
     {{-- <script src="./js/text-animate.js"></script> --}}
     @vite('resources/js/direct.js')
@@ -82,12 +84,7 @@
                 rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route"
                 placeholder="example cd me">
             </form>
-            <small class="block text-sm text-red-600 dark:text-yellow-200 font-rubik">
-                <b class="">Ctrl+B:</b> to open terminal <br>
-                <b class="">Ctrl+X:</b> to exit
-            </small>
-        </div>
-    </div>
+            <small class="block text-sm text-red-600 dark:text-yellow-200 font-rubik"> <b class="">Ctrl+B:</b> to open terminal <br> <b class="">Ctrl+X:</b> to exit </small> </div> </div>
 
 
     <!-- Navbar  -->
@@ -135,6 +132,17 @@
         @include('parts.footer')
 
     </main>
+
+    <!-- Scroll reveal section -->
+    <script>
+        let Reveal = ScrollReveal();
+        Reveal.reveal('.image', { duration: 1000, scale: 0.8, distance: '20px', reset: true });
+        Reveal.reveal('.me-content', { duration: 800, scale: 0.6, distance: '30px', reset: true });
+        Reveal.reveal('.me-title', { duration: 1000, distance: '20px', origin: 'top', reset: true });
+        Reveal.reveal('.me-buttons', { duration: 1000, distance: '30px', origin: 'bottom', reset: true });
+        Reveal.reveal('.me-about-content', { duration: 2000, distance: '50px', origin: 'left', opacity: 0, reset: true });
+        Reveal.reveal('.me-about-icons', { duration: 1000, distance: '20px', origin: 'top', opacity: 0; reset: true });
+    </script>
 
     <!-- Toggling Dark and light Theme  -->
     <script>

@@ -9,8 +9,8 @@
 
         <!-- Image  -->
         <div class="col-span-3 md:col-span-1">
-            <div class="flex items-center justify-center ml-0 md:ml-24">
-                <img src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}" class="object-fill rounded-full
+            <div class="flex image items-center justify-center ml-0 md:ml-24">
+                <img  src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}" class="object-fill rounded-full
                 shadow-lg border-4 border-zinc-100 w-48 h-48 md:w-72 md:h-72"
                     alt="">
             </div>
@@ -19,7 +19,7 @@
         <div class="text-center col-span-3 md:col-span-2">
 
             <!-- Name -->
-            <h3 class="uppercase font-medium font-rubik text-3xl mb-5 md:mb-5 text-gray-700 dark:text-zinc-300">I'm
+            <h3 class="uppercase font-medium me-title font-rubik text-3xl mb-5 md:mb-5 text-gray-700 dark:text-zinc-300">I'm
                 <span class="text-sky-600 dark:text-sky-400">{{ $user->name }} 👋</span>
             </h3>
 
@@ -29,14 +29,14 @@
             </div>
 
             <!-- Introduction  -->
-            <div class=" text-gray-800 font-rubik mb-8 md:mb-5 px-10 md:px-32  dark:text-slate-400">
+            <div class="me-content text-gray-800 font-rubik mb-8 md:mb-5 px-10 md:px-32  dark:text-slate-400">
                 I'm a student at the University of Computer Studies Yangon, passionate about web development and Java
                 Enterprise apps. I'm also interest in Maching Learning and Artificial Intelligence. Join me in the
                 tech-creative blend! 📌
             </div>
 
             <!-- Buttons  -->
-            <div class="flex flex-col sm:flex-row items-center justify-center">
+            <div class="flex me-buttons flex-col sm:flex-row items-center justify-center">
                 <!-- Download cv  -->
                 <a href="{{ $user->cv_form != null ? route('download.cv') : '' }}"
                     @if ($user->cv_form == null)
@@ -76,7 +76,7 @@
 
         <div class="flex flex-col md:flex-row items-center justify-center">
             <!-- Content  -->
-            <div class="content md:px-10  dark:text-slate-400">
+            <div class="me-about-content content md:px-10  dark:text-slate-400">
                 <p class="indent-10 font-rubik text-gray-800 text-justify mb-2 dark:text-slate-400">
                     Hello, I'm a passionate Software Engineering student currently in my 4th semester at the University of
                     Computer
@@ -109,7 +109,7 @@
 
     {{-- language logo  --}}
     <div class="w-full mb-24 md:mb-20">
-        <div class="text-center">
+        <div class="text-center me-about-icons">
             <i class="mx-1 bx bxl-html5 text-orange-600 dark:text-orange-400 text-3xl bg-orange-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
             <i class="mx-1 bx bxl-css3 text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
             <i class="mx-1 bx bxl-java text-red-600 dark:text-red-400 text-3xl bg-red-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
