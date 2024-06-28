@@ -5,13 +5,14 @@
 @section('content')
 
     <!-- Dashboard Section  -->
-    <section id="home" class="grid grid-cols-3 space-y-5 h-dvh items-center my-6 md:my-0">
+    <section id="home" class="grid grid-cols-3 space-y-5  my-18 items-center my-28 md:my-36">
 
         <!-- Image  -->
         <div class="col-span-3 md:col-span-1">
             <div class="flex image items-center justify-center ml-0 md:ml-24">
-                <img  src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}" class="object-fill rounded-full
-                shadow-lg border-4 border-zinc-100 w-48 h-48 md:w-72 md:h-72"
+                <img src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}"
+                    class="object-fill rounded-full
+                shadow-lg border-4 border-zinc-100 w-56 h-56 md:w-72 md:h-72"
                     alt="">
             </div>
         </div>
@@ -39,9 +40,7 @@
             <div class="flex me-buttons flex-col sm:flex-row items-center justify-center">
                 <!-- Download cv  -->
                 <a href="{{ $user->cv_form != null ? route('download.cv') : '' }}"
-                    @if ($user->cv_form == null)
-                        style="pointer-events: none; cursor: not-allowed;" alt="No file found!"
-                    @endif
+                    @if ($user->cv_form == null) style="pointer-events: none; cursor: not-allowed;" alt="No file found!" @endif
                     class="text-sm flex items-center {{ $user->cv_form == null ? 'bg-red-500' : 'bg-sky-700' }} rounded-full px-5 py-2
                     uppercase font-rubik text-gray-200  border-slate-500 hover:bg-sky-500 shadow-lg">
                     <i class="bx bx-file me-1 text-lg"></i> <span class="md:mt-1">
@@ -110,16 +109,64 @@
     {{-- language logo  --}}
     <div class="w-full mb-24 md:mb-20">
         <div class="text-center me-about-icons">
-            <i class="mx-1 bx bxl-html5 text-orange-600 dark:text-orange-400 text-3xl bg-orange-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-css3 text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-java text-red-600 dark:text-red-400 text-3xl bg-red-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-python text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-php text-indigo-600 dark:text-indigo-400 text-3xl bg-indigo-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-c-plus-plus text-purple-600 dark:text-purple-400 text-3xl bg-purple-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-javascript text-yellow-600 dark:text-yellow-400 text-3xl bg-yellow-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-bootstrap text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
-            <i class="mx-1 bx bxl-tailwind-css text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-html5 text-orange-600 dark:text-orange-400 text-3xl bg-orange-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-css3 text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-java text-red-600 dark:text-red-400 text-3xl bg-red-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-python text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-php text-indigo-600 dark:text-indigo-400 text-3xl bg-indigo-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-c-plus-plus text-purple-600 dark:text-purple-400 text-3xl bg-purple-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-javascript text-yellow-600 dark:text-yellow-400 text-3xl bg-yellow-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-bootstrap text-blue-600 dark:text-blue-400 text-3xl bg-blue-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
+            <i
+                class="mx-1 bx bxl-tailwind-css text-sky-600 dark:text-sky-400 text-3xl bg-sky-200 bg-opacity-50 dark:bg-opacity-30 rounded-full p-3"></i>
         </div>
+    </div>
+
+    <!-- Contact Information  -->
+    <div class="w-full mb-28 lg:mb-0">
+        <div class="flex flex-col md:flex-row items-center gap-0 md:gap-12 justify-center me-contact">
+            <!-- Infor  -->
+            <div class="mt-5 group text-slate-600 dark:text-zinc-400 flex aligns-center">
+                <i class="bx bx-envelope text-3xl me-3 text-zinc-600 dark:text-sky-400"></i> <span
+                    class="text-zinc-700 text-slate-600 dark:text-zinc-400 mt-2">heinhtetsan33455@gmail.com</span>
+            </div>
+            <div class="mt-5 group text-slate-600 dark:text-zinc-400 flex aligns-center">
+                <i class="bx bx-phone text-3xl me-3 text-zinc-600 dark:text-sky-400"></i> <span
+                    class="text-zinc-700 text-slate-600 dark:text-zinc-400 mt-2">+959 761 349 721</span>
+            </div>
+            <div class="mt-5 group text-slate-600 dark:text-zinc-400 flex aligns-center">
+                <i class="bx bx-map text-3xl me-3 text-zinc-600 dark:text-sky-400"></i> <span
+                    class="text-zinc-700 text-slate-600 dark:text-zinc-400 mt-2">Yangon, Thongwa Township</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form  -->
+    <div class="w-full mb-24 lg:mb-0">
+        <!-- Social Media Link  -->
+        <div class="text-sm ms-1  mt-8 mb-5 dark:text-cyan-700 text-slate-400 text-center">Follow me on - </div>
+
+        <div class="flex flex-row items-center justify-center gap-8 mb-16 me-follow-more">
+            <a href=""
+                class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
+                    class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-twitter"></i></a>
+            <a href=""
+                class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
+                    class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-linkedin"></i></a>
+            <a href=""
+                class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
+                    class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-github"></i></a>
+        </div>
+
+    </div>
     </div>
 
 

@@ -75,16 +75,21 @@
         <!-- Modal container -->
         <div class="bg-slate-50 dark:bg-slate-800 border-slate-300 border-2 p-8 rounded-lg shadow-lg w-full max-w-md">
             <!-- Modal content -->
-            <h2 class="text-xl font-regular text-slate-600 mb-2 dark:text-slate-200 font-rubik">Welcome Back! <span class="text-sky-600 font-semibold">Lucas Hein</span> </h2>
+            <h2 class="text-xl font-regular text-slate-600 mb-2 dark:text-slate-200 font-rubik">Welcome Back! <span
+                    class="text-sky-600 font-semibold">Lucas Hein</span> </h2>
 
             <!-- Your form content -->
             <form class="mb-3" method="POST" action="{{ route('user.check') }}">
                 @csrf
-                <input type="text" class="w-full border-r-4 border-slate-300 border-1 font-rubik text-slate-700 p-3
-                rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200" name="route"
-                placeholder="example cd me">
+                <input type="text"
+                    class="w-full border-r-4 border-slate-300 border-1 font-rubik text-slate-700 p-3
+                rounded bg-slate-200 dark:bg-slate-500 dark:focus:border-slate-100 dark:text-slate-200"
+                    name="route" placeholder="example cd me">
             </form>
-            <small class="block text-sm text-red-600 dark:text-yellow-200 font-rubik"> <b class="">Ctrl+B:</b> to open terminal <br> <b class="">Ctrl+X:</b> to exit </small> </div> </div>
+            <small class="block text-sm text-red-600 dark:text-yellow-200 font-rubik"> <b class="">Ctrl+B:</b> to
+                open terminal <br> <b class="">Ctrl+X:</b> to exit </small>
+        </div>
+    </div>
 
 
     <!-- Navbar  -->
@@ -97,36 +102,39 @@
         @yield('content')
 
 
-    {{-- session error  --}}
-    @if(session('error'))
-        <div id="alertBox" class="bg-red-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0  mx-auto w-max">
-            <div class="max-w-xl mx-auto">
-                <p class="text-red-800">{{ session('error') }}</p>
+        {{-- session error  --}}
+        @if (session('error'))
+            <div id="alertBox"
+                class="bg-red-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0  mx-auto w-max">
+                <div class="max-w-xl mx-auto">
+                    <p class="text-red-800">{{ session('error') }}</p>
+                </div>
             </div>
-        </div>
-    @endif
+        @endif
 
-    {{-- session success  --}}
-    @if(session('success'))
-        <div id="alertBox" class="bg-green-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0  mx-auto w-max">
-            <div class="max-w-xl mx-auto">
-                <p class="text-green-800">{{ session('success') }}</p>
+        {{-- session success  --}}
+        @if (session('success'))
+            <div id="alertBox"
+                class="bg-green-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0  mx-auto w-max">
+                <div class="max-w-xl mx-auto">
+                    <p class="text-green-800">{{ session('success') }}</p>
+                </div>
             </div>
-        </div>
-    @endif
+        @endif
 
-    {{-- validation error  --}}
-    @if ($errors->any())
-        <div id="alertBox" class="bg-red-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0 mx-auto w-max">
-            <div class="max-w-xl mx-auto">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li class="text-red-800">{{ $error }}</li>
-                    @endforeach
-                </ul>
+        {{-- validation error  --}}
+        @if ($errors->any())
+            <div id="alertBox"
+                class="bg-red-200 px-4 py-3 rounded shadow-md mx-auto w-max z-100 fixed bottom-5 left-0 right-0 mx-auto w-max">
+                <div class="max-w-xl mx-auto">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-red-800">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
-        </div>
-    @endif
+        @endif
 
         <!-- Footer  -->
         @include('parts.footer')
@@ -136,12 +144,58 @@
     <!-- Scroll reveal section -->
     <script>
         let Reveal = ScrollReveal();
-        Reveal.reveal('.image', { duration: 1000, scale: 0.8, distance: '20px', reset: true });
-        Reveal.reveal('.me-content', { duration: 800, scale: 0.6, distance: '30px', reset: true });
-        Reveal.reveal('.me-title', { duration: 1000, distance: '20px', origin: 'top', reset: true });
-        Reveal.reveal('.me-buttons', { duration: 1000, distance: '30px', origin: 'bottom', reset: true });
-        Reveal.reveal('.me-about-content', { duration: 2000, distance: '50px', origin: 'left', opacity: 0, reset: true });
-        Reveal.reveal('.me-about-icons', { duration: 1000, distance: '20px', origin: 'top', opacity: 0; reset: true });
+        Reveal.reveal('.image', {
+            duration: 1000,
+            scale: 0.8,
+            distance: '20px',
+            reset: true
+        });
+        Reveal.reveal('.me-content', {
+            duration: 800,
+            scale: 0.6,
+            distance: '30px',
+            reset: true
+        });
+        Reveal.reveal('.me-title', {
+            duration: 1000,
+            distance: '20px',
+            origin: 'top',
+            reset: true
+        });
+        Reveal.reveal('.me-buttons', {
+            duration: 1000,
+            distance: '30px',
+            origin: 'bottom',
+            reset: true
+        });
+        Reveal.reveal('.me-about-content', {
+            duration: 2000,
+            distance: '50px',
+            origin: 'left',
+            opacity: 0,
+            reset: true
+        });
+        Reveal.reveal('.me-about-icons', {
+            duration: 1000,
+            distance: '20px',
+            origin: 'top',
+            opacity: 0,
+            reset: true
+        });
+        Reveal.reveal('.me-contact', {
+            duration: 2000,
+            distance: '30px',
+            origin: 'top',
+            opacity: 0,
+            reset: true
+        });
+        Reveal.reveal('.me-follow-more', {
+            duration: 2000,
+            distance: '50px',
+            origin: 'bottom',
+            opacity: 0,
+            reset: true
+        });
     </script>
 
     <!-- Toggling Dark and light Theme  -->

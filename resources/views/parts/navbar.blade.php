@@ -1,4 +1,4 @@
-<nav style="z-index: 9999;" class="md:fixed top-0 w-full left-0 bg-slate-50 shadow border-b-1 border-gray-300 py-4 px-4 md:px-20 z-100 dark:bg-gray-600">
+<nav style="z-index: 9999;" class=" w-full left-0 shadow border-b-3 border-gray-300 py-10 px-8 md:px-20 z-100 ">
     <div class="container mx-auto flex flex-wrap items-center justify-between z-100">
         <!-- Brand or Logo -->
         <a href="#" class="flex">
@@ -32,13 +32,7 @@
                         @if (request()->routeIs('user.works')) workshops @endif
                     </a>
                 </li>
-                <li class="rounded-full px-6 py-2 md:hover:bg-gray-300 md:dark:hover:bg-sky-700 flex items-center justify-center {{ request()->routeIs('user.contact') ? 'bg-sky-200' : '' }}">
-                    <a href="{{ route('user.contact') }}" class="flex items-center text-slate-700 hover:bg-gray-50 md:hover:bg-transparent gap-1 md:border-0 block py-2 md:hover:textd-sky-700 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent">
-                        <i class="bx bx-envelope text-slate-700 text-lg {{ request()->routeIs('user.contact') ? '' : 'dark:text-slate-300' }}"></i>
-                        @if (request()->routeIs('user.contact')) contact @endif
-                    </a>
-                </li>
-                <!-- Dark mode switcher -->
+                                <!-- Dark mode switcher -->
                 <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 bg-gray-200 dark:bg-slate-800 dark:hover:bg-gray-700 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                     <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
