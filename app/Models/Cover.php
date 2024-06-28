@@ -12,10 +12,10 @@ class Cover extends Model
     protected $connection = 'mongodb';
     protected $collection = 'covers';
 
-    protected $fillable = [
-        'name',
-        'project_id',
-        'url',
-        'public_id'
-    ];
+    protected $fillable = ['project_id', 'filename', 'filedata', 'mime_type'];
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

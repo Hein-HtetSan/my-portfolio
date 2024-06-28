@@ -5,8 +5,9 @@ namespace App\Models;
 use App\Models\Cover;
 use App\Models\Language;
 // use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ProjectLanguage;
 use Mongodb\Laravel\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class Project extends Model
@@ -31,6 +32,6 @@ class Project extends Model
 
     public function languages()
     {
-        return $this->belongsToMany(Language::class, 'project_languages', 'project_id', 'lang_id');
+        return $this->belongsToMany(Language::class);
     }
 }

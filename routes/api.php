@@ -22,5 +22,6 @@ use App\Http\Controllers\API\LangaugeController;
     Route::get('get/langs', [LangaugeController::class, 'get']);
 
     Route::post('store/project', [ProjectController::class, 'store']);
+    Route::post('/upload', [ProjectController::class, 'handleUpload']);
 
 

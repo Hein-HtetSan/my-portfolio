@@ -18,6 +18,8 @@ return new class extends Migration
             $table->longText('content');
             $table->string('demo')->nullable(true);
             $table->string('github')->nullable(true);
+            // $table->string('lang_id');
+            // $table->foreign('lang_id')->references('id')->on('languages')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('project_languages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('lang_id');
-
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
-            $table->foreign('lang_id')->references('id')->on('languages')->onDelete('cascade');
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->foreignId('language_id')->constrained()->onDelete('cascade');
 
             $table->timestamps();
         });

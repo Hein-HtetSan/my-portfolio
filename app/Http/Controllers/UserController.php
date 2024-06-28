@@ -42,7 +42,7 @@ class UserController extends Controller
     public function detail($id)
     {
         $project = Project::with(['covers', 'languages'])->find($id);
-        dd($project->toArray());
+        // dd($project->toArray());
         $currentUrl = urlencode(URL::current());
         return view('parts.project.detail', compact('project'));
     }

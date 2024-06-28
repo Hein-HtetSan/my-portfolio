@@ -14,6 +14,6 @@ class ProjectLanguage extends Model
 
     protected $fillable = [
         'project_id',
-        'lang_id',
+        'language_id',
     ];
 }
