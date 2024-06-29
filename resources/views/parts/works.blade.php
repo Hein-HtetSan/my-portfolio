@@ -29,16 +29,17 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5">
             @foreach ($projects as $project)
                 <div
-                    class="w-full mb-3 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    {{-- <a href="#">
-                            <img class="rounded-t-lg object-cover w-full" src="./image/images.jpg" alt="" />
-                        </a> --}}
+                    class="w-full work mb-3 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+                    {{-- image section  --}}
+                    <img class="rounded-t-lg object-cover w-full h-36"
+                        src="data:image/jpg;base64,{{ base64_encode($project->cover->getData()) }}" alt="" />
+                    {{-- end of image  --}}
                     <div class="p-5">
                         {{-- tech stack  --}}
                         <div class="flex items-center justify-start gap-3 my-3">
                             @foreach ($project['languages'] as $language)
                                 <span
-                                    class="px-5 py-1 font-normal rounded-full uppercase bg-sky-200 text-sky-600 dark:bg-sky-300 dark:text-sky-800 text-sm">{{ $language['name'] }}</span>
+                                    class="px-3 py-1 font-normal rounded-full uppercase bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-500 text-xs">{{ $language['name'] }}</span>
                             @endforeach
                         </div>
                         {{-- Project title  --}}
@@ -47,19 +48,22 @@
                                 {{ $project->title }}</h5>
                         </a>
                         {{-- Project short description  --}}
-                        <p class="mb-3 font-regular text-gray-700 dark:text-gray-400">
+                        <p class="mb-3 font-regular text-gray-700 dark:text-gray-400 text-sm    ">
                             {{ $project->short_desc }}
                         </p>
                         {{-- Readmore button  --}}
-                        <a href="{{ route('project.detail', $project->id) }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-regular text-center text-white bg-sky-700 rounded-lg hover:bg-sky-500 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
-                            Read more
-                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
+                        <a href="{{ $project->github }}"
+                            class="inline-flex me-2 items-center px-3 py-1 text-sm font-regular text-center text-white bg-slate-700 rounded-lg hover:bg-slate-500 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">
+                            <i class="bx bxl-github me-2"></i>
+                            Source Code
                         </a>
+                        @if ($project->demo != null)
+                            <a href="{{ $project->demo }}"
+                                class="inline-flex items-center px-3 py-1 text-sm font-regular text-center text-white bg-sky-700 rounded-lg hover:bg-sky-500 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
+                                <i class="bx bx-play me-2"></i>
+                                Demo
+                            </a>
+                        @endif
                     </div>
                 </div>
             @endforeach

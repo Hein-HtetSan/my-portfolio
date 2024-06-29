@@ -14,8 +14,4 @@ class Cover extends Model
 
     protected $fillable = ['project_id', 'filename', 'filedata', 'mime_type'];
 
-    public function project()
-    {
-        return $this->belongsTo(Project::class);
-    }
 }

@@ -20,7 +20,7 @@ class ProjectController extends Controller
     // home page
     public function index()
     {
-        $projects = Project::with('covers', 'languages')->orderBy('created_at', 'asc')->paginate(6);
+        $projects = Project::with('languages')->orderBy('created_at', 'asc')->paginate(6);
         // Splade::onlazy(fn() => Projec)
         return view('backend.work', compact('projects'));
     }

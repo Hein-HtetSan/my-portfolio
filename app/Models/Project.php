@@ -23,12 +23,8 @@ class Project extends Model
         'content',
         'demo',
         'github',
+        'cover',
     ];
-
-    public function covers()
-    {
-        return $this->hasMany(Cover::class);
-    }
 
     public function languages()
     {

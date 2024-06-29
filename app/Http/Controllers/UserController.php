@@ -25,7 +25,7 @@ class UserController extends Controller
     // work page
     public function work()
     {
-        $projects = Project::with(['covers', 'languages'])
+        $projects = Project::with(['languages'])
                     ->orderBy('created_at', 'asc')
                     ->paginate(6);
 

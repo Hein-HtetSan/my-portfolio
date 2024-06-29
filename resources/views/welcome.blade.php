@@ -196,6 +196,13 @@
             opacity: 0,
             reset: true
         });
+        Reveal.reveal('.work', {
+            duration: 2000,
+            distance: '30px',
+            origin: 'top',
+            opacity: 0,
+            reset: true
+        });
     </script>
 
     <!-- Toggling Dark and light Theme  -->
