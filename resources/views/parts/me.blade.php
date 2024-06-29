@@ -12,7 +12,7 @@
             <div class="flex image items-center justify-center ml-0 md:ml-24">
                 <img src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}"
                     class="object-fill rounded-full
-                shadow-lg border-4 border-zinc-100 w-56 h-56 md:w-72 md:h-72"
+                shadow-lg border-4 border-zinc-100 w-64 h-64 md:w-80 md:h-80"
                     alt="">
             </div>
         </div>
