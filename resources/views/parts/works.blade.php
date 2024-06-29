@@ -5,14 +5,14 @@
 @section('content')
 
     <section id="projects"
-        class="flex font-rubik flex-col justify-center px-3 aligns-center px-0 lg:px-44 w-full h-auto md:mt-18 mb-36">
+        class="flex font-rubik flex-col justify-center px-3 aligns-center px-0 lg:px-44 w-full h-auto md:mt-18 mb-44">
 
         <!-- TItle  -->
         <h1
-            class="uppercase text-3xl mb-5 mt-2 md:mb-14 md:mt-0 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
+            class="uppercase text-3xl mb-5 mt-2 md:mb-5 md:mt-0 font-rubik font-medium text-zinc-600 dark:text-zinc-300 text-center">
             Projects 🎨
         </h1>
-        <span class="text-center block">Here is branche of projects have been developed</span>
+        <span class="text-center block text-slate-400 dark:text-slate-500">Don't You Think The Projects Are Amazing</span>
         <div class="mb-10"></div>
 
         <!-- Content -->

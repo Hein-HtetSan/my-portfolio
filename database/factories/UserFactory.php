@@ -27,7 +27,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
 
-        $imagePath = public_path('image/profile.jpg'); // Adjust the image path
+        $imagePath = public_path('image/pp.jpg'); // Adjust the image path
         $base64Data = file_get_contents($imagePath);
 
         return [

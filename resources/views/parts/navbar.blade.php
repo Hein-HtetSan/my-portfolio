@@ -8,7 +8,7 @@
     </button>
 
     <div id="navbar-menu"
-        class="hidden flex justify-center items-center bg-sky-100 dark:bg-sky-800 shadow p-2 px-5 rounded">
+        class="hidden flex justify-center items-center border-slate-4 00 dark:border-slate-700 border-2  p-2 px-5 rounded">
         <ul class="flex justify-center items-center space-x-8 md:text-sm md:font-medium">
             <!-- Menu items -->
             <li

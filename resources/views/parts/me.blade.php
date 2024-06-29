@@ -31,7 +31,10 @@
 
             <!-- Introduction  -->
             <div class="me-content text-gray-800 font-rubik mb-8 md:mb-5 px-6 md:px-32  dark:text-slate-400">
-                My name is Hein Htet San and you can call be Sam. I'm a student at the University of Computer Studies Yangon, passionate about web development and Java
+                My name is <span class="underline decoration-sky-800 font-semibold text-sky-700">Hein Htet San</span> and you can call me
+                <span class="underline decoration-sky-800 font-semibold text-sky-700"> Sam </span>. I'm a student at the University of
+                Computer Studies
+                Yangon, passionate about web development and Java
                 Enterprise apps. I'm also interest in Maching Learning and Artificial Intelligence. Join me in the
                 tech-creative blend! 📌
             </div>
@@ -69,7 +72,7 @@
     <section id="about"
         class="flex flex-col mt-12 md:mt-0 justify-center aligns-center px-5 lg:px-64 w-full h-auto mb-20">
 
-        <h1 class="uppercase text-3xl mb-10 font-rubik font-medium text-zinc-600 text-center  dark:text-zinc-300">
+        <h1 class="uppercase  text-3xl mb-10 font-rubik font-medium text-zinc-600 text-center  dark:text-zinc-300">
             Who Am I? 🙂
         </h1>
 
@@ -152,9 +155,10 @@
     <!-- Contact Form  -->
     <div class="w-full mb-24 lg:mb-0">
         <!-- Social Media Link  -->
-        <div class="text-sm ms-1  mt-8 mb-5 dark:text-cyan-700 text-slate-400 text-center">Follow me on - </div>
+        <div class="text-sm ms-1  mt-8 mb-5 dark:text-cyan-700 text-slate-400 text-center underline decoration-sky-500">
+            Follow me on - </div>
 
-        <div class="flex flex-row items-center justify-center gap-8 mb-16 me-follow-more">
+        <div class="flex flex-row items-center justify-center gap-4 mb-16 me-follow-more">
             <a href=""
                 class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                     class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-twitter"></i></a>
@@ -164,6 +168,9 @@
             <a href=""
                 class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                     class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-github"></i></a>
+            <a href=""
+                class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
+                    class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-instagram"></i></a>
         </div>
 
     </div>
