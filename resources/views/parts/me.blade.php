@@ -5,10 +5,10 @@
 @section('content')
 
     <!-- Dashboard Section  -->
-    <section id="home" class="grid grid-cols-3 space-y-5  my-18 items-center my-28 md:my-36">
+    <section id="home" class="grid grid-cols-3 space-y-5 h-auto items-center my-10 mb-20 mt-10 md:mb-48 md:mt-28">
 
         <!-- Image  -->
-        <div class="col-span-3 md:col-span-1">
+        <div class="col-span-3 md:col-span-1 mb-20 md:mb-0">
             <div class="flex image items-center justify-center ml-0 md:ml-24">
                 <img src="data:image/jpg;base64,{{ base64_encode($user->profile_photo->getData()) }}"
                     class="object-fill rounded-full
@@ -30,8 +30,8 @@
             </div>
 
             <!-- Introduction  -->
-            <div class="me-content text-gray-800 font-rubik mb-8 md:mb-5 px-10 md:px-32  dark:text-slate-400">
-                I'm a student at the University of Computer Studies Yangon, passionate about web development and Java
+            <div class="me-content text-gray-800 font-rubik mb-8 md:mb-5 px-6 md:px-32  dark:text-slate-400">
+                My name is Hein Htet San and you can call be Sam. I'm a student at the University of Computer Studies Yangon, passionate about web development and Java
                 Enterprise apps. I'm also interest in Maching Learning and Artificial Intelligence. Join me in the
                 tech-creative blend! 📌
             </div>
