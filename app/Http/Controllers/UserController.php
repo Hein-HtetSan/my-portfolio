@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         $projects = Project::with(['languages'])
                     ->orderBy('created_at', 'asc')
-                    ->paginate(6);
+                    ->paginate(12);
 
         return view('parts.works', compact('projects'));
     }
@@ -62,7 +62,7 @@ class UserController extends Controller
             // Return the response with the binary data
             return Response::streamDownload($stream, 'cv_form.pdf', [
                 'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'attachment; filename="cv_form.pdf"',
+                'Content-Disposition' => 'attachment; filename="HeinHtetSan_CV.pdf"',
             ]);
         }
         return back()->with(['error' => 'No file found']);

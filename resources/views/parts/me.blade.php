@@ -54,10 +54,10 @@
                 <div class="mx-1 my-2"></div>
 
                 <!-- Hire me  -->
-                <button
+                <a href="https://heinhtetsan.tech"
                     class="text-sm bg-gray-600 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 border-slate-500 hover:bg-gray-500 shadow-lg flex items-center">
                     <i class="bx bx-rocket me-1 text-lg"></i> <span class="md:mt-1">Hire me</span>
-                </button>
+                </a>
             </div>
         </div>
 
