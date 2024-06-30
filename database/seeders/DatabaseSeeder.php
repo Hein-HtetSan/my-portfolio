@@ -67,5 +67,7 @@ class DatabaseSeeder extends Seeder
             Language::create(['name' => $languages[$i]]);
         }
 
+        
+
     }
 }

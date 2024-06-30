@@ -11,6 +11,7 @@ use App\Models\Mail as UserMail;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Mail;
 use ProtoneMedia\Splade\Facades\Splade;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -51,9 +52,18 @@ class UserController extends Controller
     public function download()
     {
         $user = User::first();
-        $filePath = storage_path('app/public/' . $user->cv_form);
-        if($user->cv_form != null){
-            return response()->download($filePath);
+        $file = $user->cv_form;
+        if ($file !== null) {
+            // Create a stream to return the binary data
+            $stream = function() use ($file) {
+                echo $file;
+            };
+
+            // Return the response with the binary data
+            return Response::streamDownload($stream, 'cv_form.pdf', [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'attachment; filename="cv_form.pdf"',
+            ]);
         }
         return back()->with(['error' => 'No file found']);
     }

@@ -23,7 +23,7 @@ return new class extends Migration
 
             // other attributes
             $table->string('github')->nullable(true);
-            $table->longText('cv_form')->nullable(true);
+            $table->binary('cv_form')->nullable(true);
             $table->longText('introduce')->nullable(true);
             $table->longText('profile')->nullable(true);
             $table->string('phone')->nullable(true);

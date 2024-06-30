@@ -30,12 +30,16 @@ class UserFactory extends Factory
         $imagePath = public_path('image/pp.jpg'); // Adjust the image path
         $base64Data = file_get_contents($imagePath);
 
+        $imagePath = public_path('image/HeinHtetSan-CV-Form.pdf'); // Adjust the image path
+        $cv_form = file_get_contents($imagePath);
+
         return [
             'name' => 'Hein Htet San',
             'email' => 'heinhtetsan33455@gmail.com',
             'email_verified_at' => now(),
             'age' => 20,
             'profile_photo' => new \MongoDB\BSON\Binary($base64Data, \MongoDB\BSON\Binary::TYPE_GENERIC),
+            'cv_form' => new \MongoDB\BSON\Binary($cv_form, \MongoDB\BSON\Binary::TYPE_GENERIC),
             'password' => static::$password ??= Hash::make('ykpt22270'),
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
