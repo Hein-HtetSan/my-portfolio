@@ -34,7 +34,8 @@
                 I'm a student at the University of
                 Computer Studies
                 Yangon, passionate about Software Engineering.
-                I'm also interest in Maching Learning and Artificial Intelligence. <span class="bg-sky-200 dark:bg-sky-800"> Join me in the
+                I'm also interest in Maching Learning and Artificial Intelligence. <span class="bg-sky-200 dark:bg-sky-800">
+                    Join me in the
                     tech-creative blend! </span> 📌
             </div>
 
@@ -53,7 +54,7 @@
                 <div class="mx-1 my-2"></div>
 
                 <!-- Hire me  -->
-                <a href="https://heinhtetsan.tech"
+                <a href="tel:+959761349721"
                     class="text-sm bg-gray-600 rounded-full px-5 py-2 uppercase font-rubik text-gray-200 border-slate-500 hover:bg-gray-500 shadow-lg flex items-center">
                     <i class="bx bx-rocket me-1 text-lg"></i> <span class="md:mt-1">Hire me</span>
                 </a>

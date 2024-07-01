@@ -280,7 +280,7 @@
             speed = 50;
         var wordflick = function() {
             setInterval(function() {
-                if (forwards) {
+                if (forwards) { 
                     if (offset >= words[i].length) {
                         ++skip_count;
                         if (skip_count == skip_delay) {
