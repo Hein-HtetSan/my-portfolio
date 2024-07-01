@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         $projects = Project::with(['languages'])
                     ->orderBy('created_at', 'asc')
-                    ->paginate(12);
+                    ->paginate(3);
 
         return view('parts.works', compact('projects'));
     }
