@@ -269,7 +269,7 @@
 
     <!-- text animation  -->
     <script>
-        var words = ['Junior Web Developer', 'Software Engineer Student'],
+        var words = ['Web Developer', 'Software Engineer Student'],
             part,
             i = 0,
             offset = 0,

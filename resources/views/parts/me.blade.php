@@ -31,12 +31,11 @@
 
             <!-- Introduction  -->
             <div class="me-content text-gray-800 font-rubik mb-8 md:mb-5 px-6 md:px-32  dark:text-slate-400">
-                My name is <span class="underline decoration-sky-800 font-semibold text-sky-700">Hein Htet San</span> and you can call me
-                <span class="underline decoration-sky-800 font-semibold text-sky-700"> Sam </span>. I'm a student at the University of
+                I'm a student at the University of
                 Computer Studies
-                Yangon, passionate about web development and Java
-                Enterprise apps. I'm also interest in Maching Learning and Artificial Intelligence. Join me in the
-                tech-creative blend! 📌
+                Yangon, passionate about Software Engineering.
+                I'm also interest in Maching Learning and Artificial Intelligence. <span class="bg-sky-200 dark:bg-sky-800"> Join me in the
+                    tech-creative blend! </span> 📌
             </div>
 
             <!-- Buttons  -->
@@ -80,28 +79,14 @@
             <!-- Content  -->
             <div class="me-about-content content md:px-10  dark:text-slate-400">
                 <p class="indent-10 font-rubik text-gray-800 text-justify mb-2 dark:text-slate-400">
-                    Hello, I'm a passionate Software Engineering student currently in my 4th semester at the University of
-                    Computer
-                    Studies Yangon. Proficient in HTML, CSS, JavaScript, PHP, Laravel, and MySQL, I specialize in creating
-                    engaging
-                    websites and robust Java Enterprise applications.
-                </p>
-
-                <p class="indent-10 font-rubik text-gray-800 text-justify mb-2 dark:text-slate-400">
-                    My academic journey has equipped me with a solid foundation in data structures, algorithms, and
-                    programming
-                    languages like Java and C++. With a focus on Knowledge Engineering, I delve into the realms of
-                    Artificial
-                    Intelligence and Machine Learning, showcasing my continuous quest for knowledge.
-                </p>
-
-                <p class="indent-10 font-rubik text-gray-800 text-justify dark:text-slate-400">
-                    Having honed my design skills using tools like Figma, I bring a creative touch to every web project.
-                    Explore
-                    my
-                    portfolio to witness the fusion of coding expertise and design finesse. Let's build the future of
-                    technology
-                    together!
+                    Hello! I'm a passionate Software Engineering student in my 4th semester
+                    at the University of Computer Studies Yangon. I specialize in creating engaging
+                    websites and robust Java Enterprise applications using HTML, CSS, JavaScript, PHP,
+                    Laravel, and MySQL. My academic journey has provided me with a strong foundation in
+                    data structures, algorithms, and programming languages like Java and C++. I also focus
+                    on Knowledge Engineering, delving into Artificial Intelligence and Machine Learning.
+                    With design skills honed using Figma, I bring a creative touch to every project.
+                    Explore my portfolio to see the fusion of coding expertise and design finesse
                 </p>
             </div>
         </div>

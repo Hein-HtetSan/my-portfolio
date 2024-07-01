@@ -26,10 +26,10 @@ class UserController extends Controller
     // work page
     public function work()
     {
-        $projects = Project::with(['languages'])
+        $projects = Project::with('languages')
                     ->orderBy('created_at', 'asc')
                     ->paginate(3);
-
+        // dd($projects->toArray());
         return view('parts.works', compact('projects'));
     }
 

@@ -37,9 +37,9 @@
                     <div class="p-5">
                         {{-- tech stack  --}}
                         <div class="flex items-center justify-start gap-3 my-3">
-                            @foreach ($project['languages'] as $language)
+                            @foreach ($project->languages as $language)
                                 <span
-                                    class="px-3 py-1 font-normal rounded-full uppercase bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-500 text-xs">{{ $language['name'] }}</span>
+                                    class="px-3 py-1 font-normal rounded-full uppercase bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-500 text-xs">{{ $language->name }}</span>
                             @endforeach
                         </div>
                         {{-- Project title  --}}
