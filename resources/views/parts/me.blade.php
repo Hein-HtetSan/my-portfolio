@@ -145,16 +145,16 @@
             Follow me on - </div>
 
         <div class="flex flex-row items-center justify-center gap-4 mb-16 me-follow-more">
-            <a href=""
+            <a href="https://x.com/heinhtetsamm?t=-qUK-HPpHf2ZZPAzlqb5IA&s=09"
                 class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                     class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-twitter"></i></a>
-            <a href=""
+            <a href="https://www.linkedin.com/in/hein-htet-san-849b332a7"
                 class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                     class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-linkedin"></i></a>
-            <a href=""
+            <a href="https://github.com/Hein-HtetSan"
                 class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                     class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-github"></i></a>
-            <a href=""
+            <a href="https://www.instagram.com/heinhtetsamm?igsh=NmM2bGd3Z2swZDk3"
                 class="me-4 bg-zinc-400 dark:bg-sky-400 bg-opacity-50 hover:bg-opacity-30 hover:scale-110 transition ease-in-out delay-150 dark:hover:bg-opacity-30 shadow dark:bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center"><i
                     class="bx text-2xl text-zinc-600 dark:text-cyan-400 bxl-instagram"></i></a>
         </div>
