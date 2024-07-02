@@ -146,7 +146,7 @@ class ProjectSeeder extends Seeder
                 'title' => $project_names[$i],
                 'short_desc' => $project_short_desc[$i],
                 'cover' => new \MongoDB\BSON\Binary($cover, \MongoDB\BSON\Binary::TYPE_GENERIC),
-                'github' => $project_source_code[$i] . '.git',
+                'github' => 'Hein-HtetSan/' . $project_source_code[$i] . '.git',
                 'demo' => null,
                 'content' => $project_content[$i],
             ]);

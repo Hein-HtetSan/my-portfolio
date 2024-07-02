@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
+use App\Models\Language;
 use App\Models\ProjectLanguage;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,59 +17,61 @@ class LanguageSeeder extends Seeder
     {
         //
         $langs = [
-            ['668179c804bb6409b706ab02', '668179c804bb6409b706ab03', '668179c904bb6409b706ab0a'],
-            ['668179c804bb6409b706ab02', '668179c904bb6409b706ab0a'],
-            ['668179c904bb6409b706ab0c', '668179ca04bb6409b706ab0d', '668179ca04bb6409b706ab0e', '668179c904bb6409b706ab0a'],
+            ['PHP', 'Laravel', 'MySQL'],
+            ['PHP', 'MySQL'],
+            ['J2EE', 'JSP', 'JDBC', 'Bootstrap'],
             // ['668179c804bb6409b706ab02', '668179c804bb6409b706ab03', '668179c904bb6409b706ab0a'],
             // ['668179c804bb6409b706ab01'],
             // ['JavaFx', 'MySQL'],
-            ['668179c904bb6409b706ab0c', '668179c804bb6409b706ab00', '668179c904bb6409b706ab0a'],
-            ['668179c804bb6409b706ab01', '668179c904bb6409b706ab0b', '668179c904bb6409b706ab0a'],
-            ['668179ca04bb6409b706ab11', '668179ca04bb6409b706ab0f', '668179ca04bb6409b706ab10', '668179c904bb6409b706ab08'],
-            ['668179c804bb6409b706ab02', '668179c804bb6409b706ab03', '668179c904bb6409b706ab0a'],
-            ['668179c804bb6409b706aafe', '668179c904bb6409b706ab06'],
-            ['668179c804bb6409b706ab00', '668179c904bb6409b706ab06'],
-            ['668179c804bb6409b706ab00', '668179c904bb6409b706ab06'],
-            ['668179c804bb6409b706ab02', '668179c904bb6409b706ab0a'],
-            ['668179c804bb6409b706ab02'],
-            ['668179c804bb6409b706aafe', '668179c904bb6409b706ab06'],
-            ['668179c704bb6409b706aafd', '668179c804bb6409b706aafe', '668179c904bb6409b706ab06'],
-            ['668179c804bb6409b706aaff'],
-            ['668179c904bb6409b706ab06'],
-            ['668179c804bb6409b706aafe', '668179c904bb6409b706ab06'],
-            ['668179c904bb6409b706ab06'],
-            ['668179c904bb6409b706ab06']
+            ['J2EE', 'Bootstrap', 'MySQL'],
+            ['Django', 'Bootstrap', 'MySQL'],
+            ['Electron', 'React JS', 'Express', 'GraphQL'],
+            ['PHP', 'Laravel', 'MySQL'],
+            ['CSS', 'JavaScript'],
+            ['HTML', 'CSS', 'JavaScript'],
+            ['CSS', 'Bootstrap'],
+            ['PHP', 'SQL'],
+            ['PHP'],
+            ['JavaScript', 'CSS'],
+            ['HTML', 'CSS', 'JavaScript'],
+            ['Tailwindcss'],
+            ['JavaScript'],
+            ['Bootstrap', 'JavaScript'],
+            ['JavaScript'],
+            ['JavaScript']
         ];
 
-        $projects = [
-            '66817a590d093ec663006742',
-            '66817a5a0d093ec663006743',
-            '66817a5a0d093ec663006744',
+        $project_names = [  // project names
+            'Pizza Order System',
+            'Book Haven',
+            'CC Shop',
             // 'Bloggy',
             // 'AI Voice Assistance',
             // 'Student Management System',
-            '66817a5b0d093ec663006745',
-            '66817a5b0d093ec663006746',
-            '66817a5b0d093ec663006747',
-            '66817a5b0d093ec663006748',
-            '66817a5b0d093ec663006749',
-            '66817a5c0d093ec66300674a',
-            '66817a5e0d093ec66300674b',
-            '66817a5f0d093ec66300674c',
-            '66817a5f0d093ec66300674d',
-            '66817a5f0d093ec66300674e',
-            '66817a5f0d093ec66300674f',
-            '66817a5f0d093ec663006750',
-            '66817a5f0d093ec663006751',
-            '66817a5f0d093ec663006752',
-            '66817a5f0d093ec663006753',
-            '66817a600d093ec663006754'
+            'Travel Booking System',
+            'Little Lemon',
+            'Notedly',
+            'ConNET Note Taking',
+            'Movie UI',
+            'Learning App UI',
+            'AudiBook UI',
+            'To Do List',
+            'Real Time Chat',
+            'Digital Hunter 2nd Challenge',
+            'Digital Hunter B5 Solution',
+            'Easy Bank Landing UI',
+            'Rating Solution',
+            'Space Tourism UI',
+            'Bee Music',
+            'Music Player'
         ];
 
         for($i=0; $i<count($langs); $i++){
             $lang = $langs[$i];
-            for($j=0; $j<count($lang); $j++){
-                ProjectLanguage::create(['project_id' => $projects[$i], 'language_id' => $lang[$j]]);
+            $project_id = Project::select('_id')->where('title', $project_names[$i])->first();
+            for($j=0; $j<count($langs); $j++){
+                $lang_id = Language::select('_id')->where('name', $langs[$j])->first();
+                ProjectLanguage::create(['project_id' => $project_id, 'language_id' => $lang_id]);
             }
         }
     }
